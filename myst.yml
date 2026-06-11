@@ -1,0 +1,67 @@
+version: 1
+site: 
+  template: article-theme
+project:
+  license: CC-BY-4.0
+  open_access: true
+  title: Project GUSTEAU Specification
+  subtitle: Everyone can snapshot
+  short_title: GUSTEAU-Spec
+  description: Specification of the GUSTEAU (Grand Unified Snapshot That Everyone Agrees Upon) file format for particle simulation snapshots.
+  keywords: simulation, snapshots, particles, astrophysics, hpc, computing, machine learning, open source, open standard
+  # banner: 
+  authors: 
+    - name: Michael Ryan
+      id: mryan1
+      orcid: 0000-0002-0378-5195
+      corresponding: true
+      email: mryan1@sas.upenn.edu
+      affiliations:
+        - id: upenn
+      roles: 
+        - writing
+        - editing
+        - conceptualization
+        - Data curation
+        - software
+        - validation
+      github: mtryan83
+    - name: Josh Borrow
+      id: jborrow
+      orcid: 0000-0002-1327-1921
+      corresponding: true
+      email: josh@joshborrow.com
+      affiliations:
+        - id: upenn
+      roles:
+        - editing
+        - conceptualization
+        - Data curation
+        - Funding acquisition
+        - administration
+        - Supervision
+      github: jborrow
+      url: https://www.joshborrow.com
+  affiliations:
+    - id: upenn
+      institution: University of Pennsylvania
+      department: Physics & Astronomy
+      ror: 00b30xv10
+      isni: 0000 0004 1936 8972
+  funding:
+    statement: This work was supported by the NSF
+    id: 2513426
+    name: "Elements: Empowering high-performance remote access to adaptive particle simulation data"
+    sources:
+      - name: NSF
+    investigators:
+      - id: Josh Borrow
+      - name: Robyn Sanderson
+    recipient:
+      - name: The Trustees of the University of Pennsylvania
+  github: astrosocket/gusteau-spec
+  settings:
+
+
+
+
