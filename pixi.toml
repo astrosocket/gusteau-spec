@@ -6,9 +6,21 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+mserve = "myst start"
+mclean = "myst clean"
+# The mdformat-myst formatter currently has too many issues to use
+# see e.g. https://github.com/executablebooks/mdformat-myst/issues/13
+# https://github.com/executablebooks/mdformat-myst/pull/49
+# style = "mdformat --check README.md specification"
 
 [dependencies]
 python = ">=3.14.5,<3.15"
 mystmd = ">=1.10.1,<2"
-texlive-core = ">=20230313,<20230314"
-latexmk = ">=4.88,<5"
+imagemagick = ">=7.1.2_16,<8"
+mdformat = ">=1.0.0,<2"
+mdformat-myst = ">=0.3.0,<0.4"
+pdf2svg = ">=0.2.4,<0.3"
+
+[pypi-dependencies]
+mdformat-simple-breaks = ">=0.1.0, <0.2"
+mdformat-toc = ">=0.5.0, <0.6"
