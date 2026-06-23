@@ -1,0 +1,101 @@
+name: Tag Proposal
+description: Proposal for a new tag in the GUSTEAU Specification
+title: "[Tag]: "
+labels: ["tag-proposal","requires-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a new tag! Please fill out the following sections:
+  - type: checkboxes
+    id: unique-tag
+    attributes:
+      label: Is there a tag like this already?
+      description: Please search to see if a tag proposal like this already exists.
+      options:
+        - label: I have searched the existing tag proposals
+          required: true
+  - type: input
+    id: tag-name
+    attributes:
+      label: Tag Name
+      description: Please provide the suggested tag name
+      placeholder: Examples: SPHParticle, NeutronStar, MetallicGas
+    validations:
+      required: true
+  - type: textarea
+    id: tag-description
+    attributes: 
+      label: Tag Description
+      description: |
+        Please provide a brief description of what types of particles this tag
+        should be used for and why we need a new tag.
+      validations:
+        required: true
+  - type: markdown
+    attributes:
+      value: |
+        In the following sections, please describe the required and optional/
+        "best-effort" Attributes and Datasets ("fields") used in this tag. Note,
+        this could be as simple as just combining two or more previously defined
+        tags (e.g. `Stars` and `SPHParticles` to make the new tag `SPHStars`).
+  - type: input
+    id: auto-include
+    attributes:
+      label: Auto-include?
+      description: |
+        Does this tag include any previously defined tags? AKA, are there
+        necessary fields that are already included in another tag?
+        For example, all particle groups auto-include (compose with) the `Particle` tag.
+        So all particle groups *must* contain the fields defined under the `Particle` tag. 
+        Another example: all `RedGiants` are stars, so should include the `Star` fields, 
+        but are not necessarily `SPHParticles` so should not *require* those fields,
+        even if they are usually included.
+      placeholder: Leave blank if no other tags should be included
+  - type: textarea
+    id: required-fields
+    attributes:
+      label: Additional required fields
+      description: |
+        Please describe any required fields not included in one of the tags above.
+      value: |
+        Attributes:
+        | Name | Type | Brief Description | Default Value (leave blank for required fields) |
+        | ---- | ---- | ----------------- | ----------------------------------------------- |
+        |      |      |                   |                                                 |
+
+        Extended Description:
+
+        Datasets:
+        <!-- Types are either 1D arrays or 2D matrices, see the section in the -->
+        <!-- spec on Datasets for more details. -->
+        | Name | Type | Description |
+        | ---- | ---- | ----------- |
+        |      |      |             |
+
+        Extended Description (Optional): 
+
+      placeholder: |
+        Attributes:
+        | Name | Type | Brief Description | Default Value (leave blank for required fields) |
+        | ---- | ---- | ----------------- | ----------------------------------------------- |
+        |      |      |                   |                                                 |
+
+        Extended Description:
+
+        Datasets:
+        <!-- Types are either 1D arrays or 2D matrices, see the section in the -->
+        <!-- spec on Datasets for more details. -->
+        | Name | Type | Description |
+        | ---- | ---- | ----------- |
+        |      |      |             |
+
+        Extended Description (Optional):
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: Additional Comments
+      description: "Any additional comments?"
+
+
