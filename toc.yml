@@ -1,0 +1,28 @@
+version: 1
+project:
+  toc:
+    - file: INDEX.md
+    - file: specification/spec.md
+      children:
+        - title: Required Groups
+          children: 
+            - file: specification/required_groups/header/header.md
+              children:
+                - file: specification/required_groups/header/gadget-2.md
+                  hidden: true
+            - pattern: specification/required_groups/*
+        - title: Optional Groups
+          children:
+            - file: specification/particle_groups/particle_groups.md
+              children:
+              - file: specification/particle_groups/particle_tags/chemistry.md
+                children:
+                  - pattern: specification/particle_groups/particle_tags/chemistry/*
+              - file: specification/particle_groups/particle_tags/chemistry.md
+              - pattern: specification/particle_groups/particle_tags/*
+            - pattern: specification/optional_groups/*
+    - file: specification/data_layout.md
+    - file: specification/translations.md
+    - file: README.md
+      hidden: true
+
