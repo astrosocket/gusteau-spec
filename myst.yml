@@ -1,15 +1,17 @@
 version: 1
 site: 
-  template: article-theme
+  template: book-theme
 project:
+  id: a5bf97f0-833d-42bb-b8df-99deb3bf9167
   license: CC-BY-4.0
   open_access: true
   title: Project GUSTEAU Specification
-  subtitle: Everyone can snapshot
+  subtitle: Anyone can read a snapshot
   short_title: GUSTEAU-Spec
   description: Specification of the GUSTEAU (Grand Unified Snapshot That Everyone Agrees Upon) file format for particle simulation snapshots.
   keywords: simulation, snapshots, particles, astrophysics, hpc, computing, machine learning, open source, open standard
   # banner: 
+  # numbering: false
   authors: 
     - name: Michael Ryan
       id: mryan1
