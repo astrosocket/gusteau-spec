@@ -19,7 +19,7 @@ body:
     id: tag-name
     attributes:
       label: Tag Name
-      description: Please provide the suggested tag name
+      description: "Please provide the suggested tag name"
       placeholder: "Examples: SPHParticle, NeutronStar, MetallicGas"
     validations:
       required: true
@@ -30,8 +30,8 @@ body:
       description: |
         Please provide a brief description of what types of particles this tag
         should be used for and why we need a new tag.
-      validations:
-        required: true
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: |
