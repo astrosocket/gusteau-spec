@@ -20,7 +20,7 @@ body:
     attributes:
       label: Tag Name
       description: Please provide the suggested tag name
-      placeholder: Examples: SPHParticle, NeutronStar, MetallicGas
+      placeholder: "Examples: SPHParticle, NeutronStar, MetallicGas"
     validations:
       required: true
   - type: textarea
