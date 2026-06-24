@@ -2,14 +2,15 @@
 # Particle Groups
 
 ## Description
+
 Datasets for different particle types are stored in groups with descriptive names, e.g. BaryonicGas, LowResDarkMatter, BulgeStars, SMBHs.
 The required fields for a type of particle are defined hierarchically and are intended to be composable, specified by tags.
 For example, all particle groups must contain the fields in the `Particle` type (e.g. `Coordinates`, `Velocities`), while the `BulgeStars` group, tagged with `SPH`, `SubgridParticles`, and `Metallic`, would be required to include the union of additional fields in those categories.  
 Note that `Metallic`, for example, also brings in the `Hydrogenic`, `Massive`, and `Mass-frac` tags[^chem].
 
-[^chem]: Technically, the `Mass-frac` tag is "optional". See [](#tag-chemistry) for more information.
+[^chem]: The `Mass-frac` tag is "optional". See [](#tag-chemistry) for more information.
 
-Note that multiple field names can refer to the same underlying dataset through the use of hard or soft links, e.g. `Density` could be a hard link to `SPH_Smoothed_Density`. 
+Multiple field names can refer to the same underlying dataset through the use of hard or soft links, e.g. `Density` could be a hard link to `SPH_Smoothed_Density`. 
 
 Also, these categories and fields are the minimum required, and are not restrictive.
 Effectively, by tagging a particle group with a certain particle type, you are *guaranteeing* the presence of the corresponding datasets _with the specified definitions_.
@@ -39,7 +40,8 @@ That means objects like Voronoi cells or Gizmo's finite volume elements (aka `ga
 :class: hint
 :icon: false
 :class: dropdown
-Technically, your object just needs to be positionable in $D+D+1$ space, arbitrarily defining one set of $D$ values as `Coordinates`, the other as `Velocities` and the final as the `ID`.
+Actually your object just needs to be positionable in $D+D+1$ space, arbitrarily defining one set of $D$ values as `Coordinates`, the other as `Velocities` and the final as the `ID`.
+But that's basically what a particle is anyway.
 :::
 ::::
 
@@ -65,6 +67,7 @@ Technically, your object just needs to be positionable in $D+D+1$ space, arbitra
 
 (particle-groups-datasets)=
 ### Datasets
+
 Datasets can be one of two types:
 1. 1D arrays of length $N$
 2. 2D matrices of shape $N$x$M$, where the quantity $M$ is an arbitrary positive integer.
@@ -97,31 +100,37 @@ For example, `Mdot_Bondi` should not need be converted to `Mdot_Bondis`, though 
 
 (pg-units)=
 #### Units
+
 Dataset units, e.g. `"cm"` or `"furlongs/fortnight/M_moon"`.
 
 (pg-conversionfactorcgs)=
 #### ConversionFactorCGS
+
 Numerical factor to convert from the [dataset units](#pg-units) to cosmological CGS (like `cm/h`).
 Final numerical result of the quantity $U_I^{\text{U\_I\_Exponent}} \times U_L^{\text{U\_L\_Exponent}} \times U_M^{\text{U\_M\_Exponent}} \times U_T^{\text{U\_T\_Exponent}}\times U_t^{\text{U\_t\_Exponent}}$ where $U_{x}$ are from [`/Units`](#unit-table).
 
 (pg-conversionfactor_physcgs)=
 #### ConversionFactor_PhysCGS
+
 Numerical factor to convert from the [dataset units](#pg-units) to physical CGS (like `cm`).
 Final numerical result of the quantity $a^{\text{a\_scale\_exponent}} \times h^{\text{h\_scale\_exponent}} \times U_I^{\text{U\_I\_Exponent}} \times U_L^{\text{U\_L\_Exponent}} \times U_M^{\text{U\_M\_Exponent}} \times U_T^{\text{U\_T\_Exponent}}\times U_t^{\text{U\_t\_Exponent}}$ where $U_{x}$ are from [`/Units`](#unit-table).
 
 
 (pg-description)=
 #### Description
+
 Plain description of the quantities in this dataset. For datasets listed in one of the [](#particle-groups-tags), should match or expand the description in the tag.
 
 (pg-expression_for_physical_cgs)=
 #### Expression_for_physical_CGS
+
 String expression version of [](#pg-conversionfactor_physcgs).
 Only unit and cosmological factors with non-zero exponents should be included.
 For example, comoving density might be `"a^-3 U_M U_L^-3 [g cm^-3]"`.
 
 (pg-lossycompression)=
 #### LossyCompression
+
 Name of a lossy compression filter that was applied to this dataset.
 Leave empty if no filter was applied.
 

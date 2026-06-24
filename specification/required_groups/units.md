@@ -1,5 +1,6 @@
 (units)=
 # Units
+
 The `/Units` top-level group contains the transformations between the Internal Unit system used in the _snapshot_ and the CGS system[^practical-cgs].
 Generally, this is the same unit system used internally in the simulation code, but that is not required[^swift-units].
 

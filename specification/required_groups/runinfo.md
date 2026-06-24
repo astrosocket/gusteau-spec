@@ -1,10 +1,12 @@
 # RunInfo
+
 The `/RunInfo` top-level group contains information about the simulation run that produced this snapshot. 
 The attributes on the top-level describe information about the actual run, like the system name and runtime.
 `/RunInfo` also contains one or more child groups.
 The `Parameters` and `ParameterFiles` groups are "Best-Effort"; the remainder are optional, and simulation code specific.
 
 ## Attributes
+
 | Name           |  Type  | Brief Description           | Link                    |           Default Value            |
 | -------------- | :----: | --------------------------- | ----------------------- | :--------------------------------: |
 | System         | string | Host machine name           | [](#run-system)         |                 ""                 |
@@ -15,22 +17,27 @@ The `Parameters` and `ParameterFiles` groups are "Best-Effort"; the remainder ar
 
 (run-system)=
 ### `System`
+
 The `System` field contains the name of the "host" machine, e.g. where the MPI rank 0 was placed for MPI simulation codes. Generally on a cluster, this name is whatever UNIX’s `gethostname()` function returns on that system on the primary node. 
 
 (run-snapshotdate)=
 ### `SnapshotDate`
+
 The `SnapshotDate` field contains the date and time when the file was written in ISO 8601 (extended) format. This should be identical to [`/Header.SnapshotDate`](#header-snapshotdate).
 
 (run-totalruntime)=
 ### `TotalRuntime`
+
 The total simulation run time (using system time as opposed to e.g. wall clock time) up until this snapshot was produced in seconds. If the simulation was run over multiple sessions (e.g. continued/restarted from a snapshot or restart file), this field should be the sum over each of those sessions' runtime. See also [](#run-sessionruntime).
 
 (run-sessionruntime)=
 ### `SessionRuntime`
+
 The simulation run time (using system time as opposed to e.g. wall clock time) up until this snapshot was produced in seconds. If the simulation was run over multiple sessions (e.g. continued/restarted from a snapshot or restart file), this field should only be the run time of the session that produced this snapshot. May be identical to [](#run-totalruntime) if there was only one session.
 
 (run-subgroups)=
 ## Subgroups
+
 The `Parameters` and `ParameterFiles` subgroups are **Best-Effort**.
 We recommend including them in all snapshots of a simulation run, but recognize that could be a significant burden.
 We suggest at least including them in the first snapshot of the run, thereby enabling post-processing tools to copy them to other snapshots if desired.
@@ -69,10 +76,12 @@ with definitions analogous to [](#run-parameterfiles-parameterfile) and [](#run-
 
 (run-parameterfiles-parameterfile)=
 #### `ParameterFile`
+
 The `ParameterFile` attribute should be a string containing the text contents of the primary parameter file.
 If that is not an applicable concept for the simulation code, the field should be the text "N/D".
 If the file is not available (e.g. not found, unparseable, etc.), the field should be the text "N/A".
 
 (run-parameterfiles-parameterfilepath)=
 #### `ParameterFilePath`
+
 The `ParameterFilePath` attribute should be a string containing the absolute file path of the parameter file or an empty string if it does not exist. 
