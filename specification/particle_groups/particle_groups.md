@@ -5,21 +5,22 @@
 
 Datasets for different particle types are stored in groups with descriptive names, e.g. BaryonicGas, LowResDarkMatter, BulgeStars, SMBHs.
 The required fields for a type of particle are defined hierarchically and are intended to be composable, specified by tags.
-For example, all particle groups must contain the fields in the `Particle` type (e.g. `Coordinates`, `Velocities`), while the `BulgeStars` group, tagged with `SPH`, `SubgridParticles`, and `Metallic`, would be required to include the union of additional fields in those categories.  
+For example, all particle groups must contain the fields in the `Particle` type (e.g. `Coordinates`, `Velocities`), while the `BulgeStars` group, tagged with `SPH`, `SubgridParticles`, and `Metallic`, would be required to include the union of additional fields in and hierarchical structure from those categories.  
 Note that `Metallic`, for example, also brings in the `Hydrogenic`, `Massive`, and `Mass-frac` tags[^chem].
 
-[^chem]: The `Mass-frac` tag is "optional". See [](#tag-chemistry) for more information.
+[^chem]: The `Mass-frac` tag is one option of several. See [](#tag-chemistry) for more information.
 
-Multiple field names can refer to the same underlying dataset through the use of hard or soft links, e.g. `Density` could be a hard link to `SPH_Smoothed_Density`. 
+Multiple field names can refer to the same underlying dataset through the use of hard or soft links, e.g. `Density` could be a hard link to `SPH_Smoothed_Density`.
+However, we recommend not linking across groups.
 
 Also, these categories and fields are the minimum required, and are not restrictive.
-Effectively, by tagging a particle group with a certain particle type, you are *guaranteeing* the presence of the corresponding datasets _with the specified definitions_.
+Effectively, by tagging a particle group with a certain particle type, you are *guaranteeing* the presence of the corresponding fields _with the specified definitions_.
 
-However, you can certainly include additional fields without the appropriate flag (assuming it exists).
+However, you can certainly include additional fields without the appropriate tag or fields with no corresponding tag.
 
 :::{admonition}
 :class: error
-Including a field from a tag with a *different* definition than what is specified (e.g. storing the electron _mass fraction_ as `ElectronAbundance`, see [](#tag-chemistry)) is a **violation** of the specification[^unclear].
+Including a field from a tag with a *different* definition than what is specified (e.g. storing the electron _mass fraction_ as `Abundance/Electron`, see [](#tag-chemistry)) is a **violation** of the specification[^unclear].
 :::
 
 All particle groups must fulfill [`Particles`](#tag-particles) at a minimum.
@@ -51,6 +52,8 @@ But that's basically what a particle is anyway.
 (particle-groups-attributes-req)=
 #### Required Attributes
 
+The following attributes are **required** on the top-level particle group.
+
 | Name           | Type     | Description                                                                                                                                                                                                    |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Aliases        | string[] | List of aliases (links) to this Group. E.g. ["gas", "PartType0"]                                                                                                                                               |
@@ -60,6 +63,8 @@ But that's basically what a particle is anyway.
 
 (particle-groups-attributes-opt)=
 #### Optional Attributes
+
+The following attribute is **optional** on the top-level particle group.
 
 | Name              | Type | Description                                                                                     |
 | ----------------- | ---- | ----------------------------------------------------------------------------------------------- |
@@ -134,12 +139,38 @@ For example, comoving density might be `"a^-3 U_M U_L^-3 [g cm^-3]"`.
 Name of a lossy compression filter that was applied to this dataset.
 Leave empty if no filter was applied.
 
-(particle-groups-subgroups)=                           
-### Subgroups 
+(particle-groups-subgroups)=
+### Subgroups (and sub-subgroups and ...)
 
-Subgroups form a collection of related datasets inside a Particle Group. Generally, they are used to organize datasets that may have the same units, or represent similar quantities. Prominent examples include chemical abundances or black hole merger statistics.
+Subgroups form a collection of related datasets inside a Particle Group.
+Generally, they are used to organize datasets that may originate from the same code module, or have the same units, or represent similar quantities.
+Prominent examples include chemical abundances or black hole merger statistics.
 
-Subgroups have no required attributes or datasets.
+Subgroups can also be tagged, just like Particle Groups, useful for having multiple sets of similar information.
+For example, consider a particle group with the fields 
+```
+Masses
+Potentials
+CarbonAbundance
+...
+SmoothedMasses
+SmoothedPotentials
+SmoothedCarbonAbundance
+...
+```
+Clearly, this can be tagged `Massive`, `Potential`, and `Metallic`, but that ignores the `SmoothedXXXX` fields.
+Our recommendation would be a `Smoothed` subgroup, also tagged with `Massive`, `Potential`, and `Metallic`, guaranteeing the presence and meaning of the subfields.
+
+If a field has a more descriptive name, but acts like the more generic field under a tag, we recommend using a hard link for the tag name.
+For example, a `FOF` (Friends-Of-Friends) subgroup might have a `FOFGroupID`, which acts like a `Group`'s `GroupIDs`.
+By hard-linking `GroupIDs` to `FOFGroupID`, you can satisfy the `Group` tag without introducing any duplicate data.
+
+All subgroups have two **required** attributes:
+
+| Name        | Type     | Description                                                                                                            |
+| ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Description | string   | A description of the subgroup explaining why the contents are grouped together                                         |
+| Tags        | string[] | List of particle type tags filled by this group. An empty list is assumed to match nothing. Tags are case-insensitive. |
 
 
 (tag-particles)=
@@ -147,11 +178,11 @@ Subgroups have no required attributes or datasets.
 
 The base particle type. Has an id, position, velocity, and nothing else.
 
-| Name | 2nd Dimension | Description |
+| Name        | 2nd Dimension | Description                                        |
 | ----------- | ------------- | -------------------------------------------------- |
-| ParticleIDs | | Particle ID number |
-| Coordinates | $D$ | The $D$-D coordinates of the particle |
-| Velocities | $D$ | The $D$-D peculiar velocity vector of the particle |
+| ParticleIDs |               | Particle ID number                                 |
+| Coordinates | $D$           | The $D$-D coordinates of the particle              |
+| Velocities  | $D$           | The $D$-D peculiar velocity vector of the particle |
 
 (particle-groups-tags)=
 ## Other Particle tags
