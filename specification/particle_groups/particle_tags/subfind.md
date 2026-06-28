@@ -18,8 +18,6 @@ Particles with this tag **must** include the subgroup `Subfind` with the followi
 
 ## Attributes
 
-The `Subfind` subgroup must have the following attributes:
-
 | Name              | Type                 | Description                                                                                                                                           |
 | ----------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | NumNearest        | number               | The threshold of nearest particles used                                                                                                               |
@@ -35,4 +33,3 @@ The `Subfind` subgroup must have the following attributes:
 | Subfind/VelocityDispersions | The $D$D velocity dispersion of all "Dark Matter" particles within a radius of `SubfindHsml`                                                   |
 
 In the above, "Dark Matter" refers to the particle types listed in the `DarkMatterSpecies` attribute.
-
