@@ -19,4 +19,4 @@ For the purpose here, it does not matter how or why the particle transformed.
 | Name                 | Description                                                                              |
 | -------------------- | ---------------------------------------------------------------------------------------- |
 | TransformTimes       | Time of the most recent particle type transformation.                                    |
-| PreviousParticleType | Previous particle type as an index into [`/Header.ParticleNames`](#header-particlenames) |
+| PreviousParticleTypes | Previous particle type as an index into [`/Header.ParticleNames`](#header-particlenames) |
