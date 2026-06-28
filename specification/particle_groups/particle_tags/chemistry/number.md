@@ -1,13 +1,17 @@
 ---
-short_title: Raw-number
+short_title: Number Density
 ---
 (tag-chem-number)=
-# Raw Number Densities
+# Number Density
 
-Tag: `Raw-number`
+Tag: `NumberDensity`
 
 Includes:  [`Particles`](#tag-particles)
 
-Chemical abundances are defined using the direct number density, i.e. $n_i$ in units of $\frac{\text{\# of particles}}{\text{Length}^D}$, for species $i$.
+Tag-Description: Number density-based chemical abundances
 
-All abundances given via raw number density should be denoted as `N_species_name`, so a hydrogen number density would be given as `N_hydrogen`.
+Subgroups: `NumberDensities`
+
+Subgroup-Description: Number density-based chemical abundances
+
+Chemical abundances are defined using the direct number density, i.e. $n_i$ in units of $\frac{\text{\# of particles}}{\text{Length}^D}$, for species $i$.

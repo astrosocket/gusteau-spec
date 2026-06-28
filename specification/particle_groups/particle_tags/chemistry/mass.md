@@ -1,13 +1,17 @@
 ---
-short_title: Raw-mass
+short_title: Mass Density
 ---
 (tag-chem-mass)=
-# Raw Mass Densities
+# Mass Density
 
-Tag: `Raw-mass`
+Tag: `MassDensity`
 
 Includes:  [`Massive`](#tag-massive)
 
-Chemical abundances are defined using the direct mass density, i.e. $\rho_i$ in units of $\frac{\text{Mass}}{\text{Length}^D}$, for species $i$.
+Tag-Description: Mass density-based chemical abundances
 
-All abundances given via raw mass density should be denoted as `Rho_species_name`, so a hydrogen mass density would be given as `Rho_hydrogen`.
+Subgroups: `MassDensities`
+
+Subgroup-Description: Mass density-based chemical abundances
+
+Chemical abundances are defined using the direct mass density, i.e. $\rho_i$ in units of $\frac{\text{Mass}}{\text{Length}^D}$, for species $i$.
