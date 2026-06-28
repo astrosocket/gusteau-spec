@@ -8,7 +8,9 @@ Tag: `SPH`
 
 Includes:  [](#tag-hydro)
 
-Particles evolved using Smoothed Particle Hydrodynamics.
+Tag-Description: Particles evolved using Smoothed Particle Hydrodynamics.
+
+## Datasets
 
 | Name                  | Description                                                             |
 | --------------------- | ----------------------------------------------------------------------- |

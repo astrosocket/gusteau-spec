@@ -8,9 +8,11 @@ Tag: `Merge-split`
 
 Includes: [`Particles`](#tag-particles)
 
-Particles that undergo splitting and merging.
+Tag-Description: Particles that undergo splitting and merging.
 
 For the purpose here, it does not matter exactly what it means to be the "original" particle vs "new" particle, but as an example, the "original" particle would be the one that kept the `ParticleID` while the "new" particle received a new ID.
+
+## Datasets
 
 | Name                  | Description                                                                                                                                                                                                                                                                                                                        |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

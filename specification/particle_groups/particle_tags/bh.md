@@ -8,17 +8,20 @@ Tag: `Black-hole`
 
 Includes: [](#tag-massive)
 
-Particles representing black holes.
+Tag-Description: Particles representing black holes.
 
-Particles with this tag **must** include the subgroup `BH` with the following datasets. 
-Datasets may **optionally** be linked with datasets at the main group level that are prefixed with `BH` (i.e. `BH_Masses` links to `BH/Masses`.
+Subgroups: `BH`
+
+Subgroup-Description: This subgroup is the primary location to store black hole-related subgrid quantities.
+
+Particles with this tag **must** include the subgroup `BH`.
+
+While the quantities utilized in black hole-subgrid physics can vary significantly, common datasets are described below. 
 
 ## Datasets
-
 
 | Name                   | Description                                                           |
 | ---------------------- | --------------------------------------------------------------------- |
 | BH/Masses              | Mass of the black hole, not necessarily the same as the particle mass |
 | BH/TotalAccretionRates | Total accretion rate of the black holes in units of mass / time.      |
-|                        |                                                                       |
 

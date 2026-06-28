@@ -8,7 +8,9 @@ Tag: `AGS`
 
 Includes:  [`Massive`](#tag-massive)
 
-Particles with adaptive gravitational softening.
+Tag-Description: Particles with adaptive gravitational softening.
+
+## Datasets
 
 | Name           | Description                                             |
 | -------------- | ------------------------------------------------------- |

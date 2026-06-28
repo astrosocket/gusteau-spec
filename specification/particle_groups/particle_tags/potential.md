@@ -8,7 +8,9 @@ Tag: `Potential`
 
 Includes:  [](#tag-massive)
 
-Particles with a gravitational potential.
+Tag-Description: Particles with a gravitational potential.
+
+## Datasets
 
 | Name       | Description                                                |
 | ---------- | ---------------------------------------------------------- |

@@ -5,7 +5,9 @@ Tag: `Magnetic`
 
 Includes: [`Particles`](#tag-particles)
 
-Particles with an attached magnetic field.
+Tag-Description: Particles with an attached magnetic field.
+
+## Datasets
 
 | Name                     | 2nd Dimension | Description                                          |
 | ------------------------ | ------------- | ---------------------------------------------------- |

@@ -8,7 +8,7 @@ Tag: `Sink-stars`
 
 Includes: [](#tag-massive), [](#tag-merge-split), [](#tag-transform)
 
-Particles representing star-like sink particles.
+Tag-Description: Particles representing star-like sink particles.
 
 
 

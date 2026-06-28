@@ -8,8 +8,11 @@ Tag: `Hydro`
 
 Includes:  [`Massive`](#tag-massive)
 
-Particles that are being evolved hydrodynamically.
+Tag-Description: Particles that are being evolved hydrodynamically.
+
 Generally, these particles map to some sort of volume element and are not simply point particles.
+
+## Datasets
 
 | Name             | Description                                                              |
 | ---------------- | ------------------------------------------------------------------------ |
