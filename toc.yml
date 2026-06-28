@@ -18,7 +18,6 @@ project:
               - file: specification/particle_groups/particle_tags/chemistry.md
                 children:
                   - pattern: specification/particle_groups/particle_tags/chemistry/*
-              - file: specification/particle_groups/particle_tags/chemistry.md
               - pattern: specification/particle_groups/particle_tags/*
             - pattern: specification/optional_groups/*
     - file: specification/data_layout.md
