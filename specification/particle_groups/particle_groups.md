@@ -90,18 +90,18 @@ For example, `Mdot_Bondi` should not need be converted to `Mdot_Bondis`, though 
 | Name                        | Type   | Description                                                                             | Link                                |
 | --------------------------- | ------ | --------------------------------------------------------------------------------------- | ----------------------------------- |
 | Units                       | string | Dataset units                                                                           | [](#pg-units)                       |
-| ConversionFactorCGS         | double | Conversion factor to CGS units, not including cosmological corrections                  | [](#pg-conversionfactorcgs)         |
-| ConversionFactor_PhysCGS    | double | Conversion factor to CGS units, including cosmological corrections                      | [](#pg-conversionfactor_physcgs)    |
+| ConversionFactorCGS         | number | Conversion factor to CGS units, not including cosmological corrections                  | [](#pg-conversionfactorcgs)         |
+| ConversionFactor_PhysCGS    | number | Conversion factor to CGS units, including cosmological corrections                      | [](#pg-conversionfactor_physcgs)    |
 | Description                 | string | Description of the dataset                                                              | [](#pg-description)                 |
 | Expression_for_physical_CGS | string | The condensed expression for converting the dataset units into physical CGS units       | [](#pg-expression_for_physical_cgs) |
 | LossyCompression            | string | Filter used for lossy compression. If no filter is applied, use the empty string, `""`. | [](#pg-lossycompression)            |
-| U_I_exponent                | float  | Power of the [current unit](#unit-table)                                                |                                     |
-| U_L_exponent                | float  | Power of the [length unit](#unit-table)                                                 |                                     |
-| U_M_exponent                | float  | Power of the [mass unit](#unit-table)                                                   |                                     |
-| U_T_exponent                | float  | Power of the [temperature unit](#unit-table)                                            |                                     |
-| U_t_exponent                | float  | Power of the [time unit](#unit-table)                                                   |                                     |
-| a_scale_exponent            | float  | Power of the [scale-factor](#cosmo-scale-factor)                                        |                                     |
-| h_scale_exponent            | float  | Power of the [reduced Hubble constant ($h$)](#cosmo-littleh)                            |                                     |
+| U_I_exponent                | number  | Power of the [current unit](#unit-table)                                                |                                     |
+| U_L_exponent                | number  | Power of the [length unit](#unit-table)                                                 |                                     |
+| U_M_exponent                | number  | Power of the [mass unit](#unit-table)                                                   |                                     |
+| U_T_exponent                | number  | Power of the [temperature unit](#unit-table)                                            |                                     |
+| U_t_exponent                | number  | Power of the [time unit](#unit-table)                                                   |                                     |
+| a_scale_exponent            | number  | Power of the [scale-factor](#cosmo-scale-factor)                                        |                                     |
+| h_scale_exponent            | number  | Power of the [reduced Hubble constant ($h$)](#cosmo-littleh)                            |                                     |
 
 (pg-units)=
 #### Units
