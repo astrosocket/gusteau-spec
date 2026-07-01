@@ -26,7 +26,7 @@ The following attributes are required and are described in the remainder of this
 | RunName             |         string         | User-specified descriptive name of simulation run      | [](#header-RunName)             | `""`                   |
 | NumFilesPerSnapshot |          int           | Number of files per snapshot                           | [](#header-numfilespersnapshot) | 1                      |
 | Dimension           |          int           | Dimensionality of the simulation                       | [](#header-Dimension)           | 3                      |
-| PartType_Mapping    |  int[6] \| string[6]   | Particle name mapping to `PartType0`, `PartType1`, etc | [](#header-PartType_Mapping)    | See description        |
+| PartType_Mapping    |  int[6] or string[6]   | Particle name mapping to `PartType0`, `PartType1`, etc | [](#header-PartType_Mapping)    | See description        |
 | SnapshotDate        |         string         | Snapshot creation timestamp                            | [](#header-SnapshotDate)        | snapshot creation time |
 | Redshift            |         number         | Cosmological redshift of this snapshot                 | [](#header-Redshift)            | 0                      |
 

@@ -57,6 +57,7 @@ The following attributes are **required** on the top-level particle group.
 | Name           | Type     | Description                                                                                                                                                                                                    |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Aliases        | string[] | List of aliases (links) to this Group. E.g. ["gas", "PartType0"]                                                                                                                                               |
+| Description    | string   | Description of the type of particles contained (e.g. "White Dwarf Stars")                                                                                                                                      |
 | Tags           | string[] | List of particle type tags filled by this Group. An empty list is assumed to only match [`Particle`](#tag-particles).  Tags are case-insensitive: "Massive" is the same as "massive" is the same as "mAsSiVe". |
 | NumberOfFields | int      | Number of Datasets contained in this group                                                                                                                                                                     |
 

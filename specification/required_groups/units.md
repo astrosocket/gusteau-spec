@@ -11,6 +11,7 @@ All attributes are simple numbers and are **required**.
 
 :::{table} Unit Quantity Table
 :label: unit-table
+
 | Name                | CGS unit   | Abbreviation |
 | ------------------- | ---------- | :----------: |
 | UnitLength_CGS      | centimeter |     U_L      |

@@ -17,7 +17,7 @@ Likewise the default value is  `-1` unless specified.
 | Omega_lambda           |            X             | [](#cosmo-omega_lambda)           |
 | h                      |            X             | [](#cosmo-littleH)                |
 | Redshift               |            X             | [](#cosmo-redshift)               |
-| Scale-factor           |            X             | [](#cosmo-scale-factor)           |
+| Scale_factor           |            X             | [](#cosmo-scale-factor)           |
 | H                      |                          | [](#cosmo-bigH)                   |
 | H0                     |                          | [](#cosmo-H0)                     |
 | Critical_density       |                          | [](#cosmo-critical_density)       |

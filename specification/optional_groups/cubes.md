@@ -45,6 +45,9 @@ The overall bounding box of the `i`th cube as `[x, y, z, dx, dy, dz]`, where `x/
 
 The serialized `PackedTree` of the `i`th cube. See the [packed format specification](https://packingcubes.readthedocs.io/en/latest/Users-Guide/Reference/packed_format/).
 
+Each `tree_i` dataset has one attribute: `packed_format_version`, which specifies which version of the packed format specification was used.
+
+
 :::{admonition}
 :tip:
 This field is optional. If it is missing, `packingcubes` will currently generate the `PackedTree` upon loading the particle type, including sorting data positions, etc. Thus, simulations do not need to compute or provide the `PackedTree` structures or do any data sorting beyond providing top-level boxes to provide this group. 
