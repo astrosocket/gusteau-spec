@@ -9,9 +9,9 @@ Tag-Description: Particles with a mass.
 
 ## Datasets
 
-| Name   | Type       | Description                      |
-| ------ | ---------- | -------------------------------- |
-| Masses | float[$N$] | Mass of the individual particles |
+| Name   | Description                      |
+| ------ | -------------------------------- |
+| Masses | Mass of the individual particles |
 
 ## Note
 

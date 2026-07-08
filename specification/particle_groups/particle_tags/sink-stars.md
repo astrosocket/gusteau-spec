@@ -6,7 +6,7 @@ short_title: Sink-stars
 
 Tag: `Sink-stars`
 
-Includes: [](#tag-massive), [](#tag-merge-split), [](#tag-transform)
+Includes: [`Massive`](#tag-massive), [`Merge-Split`](#tag-merge-split), [`Transform`](#tag-transform)
 
 Tag-Description: Particles representing star-like sink particles.
 

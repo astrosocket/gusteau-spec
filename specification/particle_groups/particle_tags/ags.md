@@ -14,4 +14,4 @@ Tag-Description: Particles with adaptive gravitational softening.
 
 | Name           | Description                                             |
 | -------------- | ------------------------------------------------------- |
-| AGS-Softenings | The particles' current softening length at this snapshot |
+| AGS_Softenings | The particles' current softening length at this snapshot |

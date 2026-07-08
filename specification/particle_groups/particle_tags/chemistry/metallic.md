@@ -31,10 +31,10 @@ Depending on the chemical abundance tag, the `Metals` subgroup will have an addi
 
 and *recommended* dataset:
 
-| Name                    | Description                                                                                                                                                                           | Required For |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| Metals/TotalAbundance | Total abundance term. Includes non-metallic species if `MetalOnlyDenominator` is `False`. Equivalent to $\sum_j n_j$ in the [abundance definition](#eq:abundance-def).                | Abundance    |
-| Metals/TotalMass      | Total mass term. Includes Hydrogen species if `MetalOnlyDenominator` is `False`. Equivalent to $\sum_j m_j n_j$  in the [mass-fraction definition](#eq:massfrac-def) or $x_0$, above. | Mass-Frac    |
+| Name                   | Description                                                                                                                                                                           | Required For |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Metals/TotalAbundances | Total abundance term. Includes non-metallic species if `MetalOnlyDenominator` is `False`. Equivalent to $\sum_j n_j$ in the [abundance definition](#eq:abundance-def).                | Abundance    |
+| Metals/TotalMasses     | Total mass term. Includes Hydrogen species if `MetalOnlyDenominator` is `False`. Equivalent to $\sum_j m_j n_j$  in the [mass-fraction definition](#eq:massfrac-def) or $x_0$, above. | Mass-Frac    |
 
 ## Example
 
