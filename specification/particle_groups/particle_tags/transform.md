@@ -26,8 +26,9 @@ For the purpose here, it does not matter how or why the particle transformed.
 | TransformScaleFactors | Scale-factor of the most recent particle type transformation.                            |
 | PreviousParticleTypes | Previous particle type as an index into [`/Header.ParticleNames`](#header-particlenames) |
 
-`TransformScaleFactors` is **optional**; the other two datasets are **required**.
+At least one of `TransformTimes` and `TransformScaleFactors` is **required**. If having both options is unfeasible, `TransformTimes` is the preferred option[^time_preference].  `PreviousParticleTypes` is **required**.
 
+[^time_preference]: `TransformTimes` is preferred because it is the variable that is more likely to be available. `TransformScaleFactors` only makes sense in cosmological simulations
 ## Subgroup - `FromParent`
 
 The `FromParent` subgroup should contain any of the fields that were retained from the previous particle type(s) that are no longer actively updated, organized by type.

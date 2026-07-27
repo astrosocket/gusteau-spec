@@ -24,7 +24,7 @@ The following attributes are required and are described in the remainder of this
 | BoundingBox         |       double[6]        | `[x,y,z,dx,dy,dz]` of primary simulation region        | [](#header-BoundingBox )        |                        |
 | Time                |         number         | Simulation time of this snapshot                       | [](#header-Time )               |                        |
 | RunName             |         string         | User-specified descriptive name of simulation run      | [](#header-RunName)             | `""`                   |
-| NumFilesPerSnapshot |          int           | Number of files per snapshot                           | [](#header-numfilespersnapshot) | 1                      |
+| NumFilesPerSnapshot |         int32          | Number of files per snapshot                           | [](#header-numfilespersnapshot) | 1                      |
 | Dimension           |          int           | Dimensionality of the simulation                       | [](#header-Dimension)           | 3                      |
 | PartType_Mapping    |  int[6] or string[6]   | Particle name mapping to `PartType0`, `PartType1`, etc | [](#header-PartType_Mapping)    | See description        |
 | SnapshotDate        |         string         | Snapshot creation timestamp                            | [](#header-SnapshotDate)        | snapshot creation time |

@@ -9,7 +9,7 @@ Tag-Description: Particles with metal chemistry
 
 Subgroups: `Metals`
 
-Subgroup-Description: Metallic chemistry quantities
+Subgroup-Description: Metallic chemical quantities
 
 Particles whose chemistry includes metallic or molecular elements that are not already included in the `Hydrogen`, `ExtendedHydrogen`, or `Helium` tags.
 

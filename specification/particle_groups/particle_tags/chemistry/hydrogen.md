@@ -20,12 +20,12 @@ They may **optionally** additionally be referenced by the full name via hard lin
 
 Groups: `NumberDensities/Hydrogen`
 
-| Name | Full Name       | Description                                 |
-| ---- | --------------- | ------------------------------------------- |
-| H    | Hydrogen        | Number density of Neutral Hydrogen (`HI`)   |
-| Hp   | Proton[^proton] | Number density of Protons (`HII`)           |
-| E    | Electron        | Number density of Electrons                 |
-| H2   |                 | Number density of Molecular Hydrogen (`H2`) |
+| Name | Full Name         | Description                                 |
+| ---- | ----------------- | ------------------------------------------- |
+| H    | Hydrogen          | Number density of Neutral Hydrogen (`HI`)   |
+| Hp   | Proton[^proton]   | Number density of Protons (`HII`)           |
+| E    | Electron          | Number density of Electrons                 |
+| H2   | MolecularHydrogen | Number density of Molecular Hydrogen (`H2`) |
 
 :::
 :::{tab-item} Mass Density
