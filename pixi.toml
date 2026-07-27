@@ -14,9 +14,9 @@ mclean = "myst clean"
 # style = "mdformat --check README.md specification"
 
 [dependencies]
-python = ">=3.14.5,<3.15"
+python = ">=3.14.6,<3.15"
 mystmd = ">=1.10.1,<2"
-imagemagick = ">=7.1.2_16,<8"
+imagemagick = ">=7.1.2_27,<8"
 mdformat = ">=1.0.0,<2"
 mdformat-myst = ">=0.3.0,<0.4"
 pdf2svg = ">=0.2.4,<0.3"
