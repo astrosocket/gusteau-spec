@@ -130,3 +130,96 @@ These groups are **not required** to be present.
 For example, GUSTEAU snapshots do not actually need to contain any particle data, found in a [Particle Group](#particle-groups), though they generally do.
 Likewise, simulation code developers might want to output GUSTEAU snapshots without creating the optional `packingcubes` structure.
 
+
+(metadata)=
+## The `Metadata` attribute
+
+We include an attribute on the top level, `/.Metadata`.
+This attribute is a JSON formatted string listing every Group, Dataset and Attribute, including soft & external links, in the snapshot as a hierarchical dictionary of dictionaries.
+Every field additionally has the following information included[^hyphens]:
+
+| Name     | Definition                                        |
+| -------- | ------------------------------------------------- |
+| `-shape` | Depends on the object type. For datasets, it's the dataset's `.shape`. For groups, it's the number of child groups/datasets as a single element array. For attributes, `[]` for variable-length-string types, `.shape` otherwise. For soft/external links, `[]` |
+| `-type` | `"Group"`, `"Dataset($DTYPE)"` (`$DTYPE` is the `.dtype` of the dataset), `"Link"`,  or `type(a).__name__` for attribute `a` |
+| `-attrs` | Location of attribute dictionaries for Group/Datasets. Empty if a link or attribute. |
+| `-path` | The fully qualified path of the _referenced_ object. This is the linked path for links, otherwise it's the full name of the object |
+
+[^hyphens]: Note that since hyphens are forbidden from field names in GUSTEAU, it's totally fine to have a field named "path" or even "attrs", though we don't recommend it.
+
+So for example, for a file with the following
+
+```
+/groupA
+  /groupA1
+    /datasetA1 = [1, 2, 3, 4, 5]
+    /datasetA1.att1 = "Description'
+    /datasetA1.att2 = 4
+    /datasetA2 = [[1.0, 2.0], [3.0, 4.0]]
+  /groupA1.att1 = "Description"
+/groupA.att1 = "Description"
+/groupA_link -> /groupA
+```
+`/.Metadata` would look like
+
+```json
+{
+  "groupA": {
+    "-shape": [1],
+    "-type": "Group",
+    "-attrs": {
+      "att1": {
+        "-shape": [],
+        "-type": "str",
+        "-attrs": {},
+        "-path": "groupA.att1"
+      }
+    },
+    "-path": "groupA",
+    "groupA1": {
+      "-shape": [2],
+      "-type": "Group",
+      "-attrs": {
+        "att1": {
+          "-shape": [],
+          "-type": "str",
+          "-attrs": None,
+          "-path": "groupA/groupA1.att1"
+        }
+      },
+      "-path": "groupA/groupA1",
+      "datasetA1": {
+        "-shape": [5],
+        "-type": "Dataset(int64)",
+        "-attrs": {
+          "att1": {
+            "-shape": [],
+            "-type": "str",
+            "-attrs": None,
+            "-path": "groupA/groupA1/datasetA1.att1"
+          },
+          "att1": {
+            "-shape": [],
+            "-type": "int64",
+            "-attrs": None,
+            "-path": "groupA/groupA1/datasetA1.att2"
+          },
+        },
+        "-path": "groupA/groupA1/datasetA1",
+      },
+      "datasetA2": {
+        "-shape": [2,2],
+        "-type": "float64",
+        "-attrs": {},
+        "-path": "groupA/groupA1/datasetA2"
+      }
+    }
+  },
+  "groupA_link": {
+    "-shape": [],
+    "-type": "Link",
+    "-attrs": {},
+    "-path": "groupA",
+  }
+}
+```
