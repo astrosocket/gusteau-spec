@@ -15,11 +15,11 @@ The basic structure is
 - cubes/
     - ParticleType/
         - indices
-        - number
         - box_i
         - tree_i
+    - ParticleType.NumberOfCubes
 ```
-where the `i` in `box_i`/`tree_i` ranges from 0 to the number of cubes ([`number`](#cubes-number)), e.g. `box_0`, `tree_100`.
+where the `i` in `box_i`/`tree_i` ranges from 0 to the number of cubes ([`NumberOfCubes`](#cubes-number)), e.g. `box_0`, `tree_100`.
 
 The `ParticleType` substructure is duplicated for each [particle type](#header-particlenames) that has a [`ParticleCubes`](https://packingcubes.readthedocs.io/en/latest/Users-Guide/Reference/Cubes/#packingcubes.cubes.ParticleCubes) object associated with it.
 
@@ -31,7 +31,7 @@ The datasets are defined as follows:
 The starting indices into the particle datasets of each cube. Currently a `uint64[N]` array.
 
 (cubes-number)=
-### `number`
+### `NumberOfCubes`
 
 The number of cubes in the `ParticleCubes` object. 
 
