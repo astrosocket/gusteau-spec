@@ -50,12 +50,15 @@ They are described in the [Optional Groups](#Optional-Groups) subsection.
 (field-names)=
 ### Field names 
 
-`Attribute` and `Dataset` names should not contain any punctuation or whitespace besides _ (underscores).
+`Attribute`, `Dataset`, and `Group` names should not contain any punctuation or whitespace besides _ (underscores).
+Field names must start with a valid ASCII letter (a-zA-Z)[^ascii].
 Upper and lower case names are distinct, so for example, `h` and `H` could be different attributes under `/Cosmology` (though see [](#Attribute-units), below).
 Whitespace should be converted to underscores; punctuation should be converted to underscores or omitted on a case by case basis.
 For example, the field `Conversion factor to CGS (not including cosmological corrections)` could be converted to `Conversion_factor_to_CGS_not_including_cosmological_corrections`.
 
 There is no preference for CamelCase vs snake_case; either is valid but clarity is most important.
+
+[^ascii]: The ASCII restriction comes from HDF5; we restrict the first character so that the field name can usually be used as a variable name directly.
 
 (field-types)=
 ### Field types
@@ -106,7 +109,7 @@ Required
   If the default value is present, it is usually safer to assume the value was unknown rather than that specific value.
 
 Optional
-: The intention is that very few, if any fields are considered optional, unlike [](#optional-groups).
+: The intention is that few fields are considered optional, unlike [](#optional-groups).
   If a field is marked optional, it does not _need_ to be present in the snapshot, though it preferably is.
 
 
