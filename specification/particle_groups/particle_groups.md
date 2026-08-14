@@ -59,7 +59,7 @@ The following attributes are **required** on the top-level particle group.
 | Aliases        | string[] | List of aliases (links) to this Group. E.g. ["gas", "PartType0"]                                                                                                                                               |
 | Description    | string   | Description of the type of particles contained (e.g. "White Dwarf Stars")                                                                                                                                      |
 | Tags           | string[] | List of particle type tags filled by this Group. An empty list is assumed to only match [`Particle`](#tag-particles).  Tags are case-insensitive: "Massive" is the same as "massive" is the same as "mAsSiVe". |
-| NumberOfFields | int      | Number of Datasets contained in this group                                                                                                                                                                     |
+| Number_of_fields | int      | Number of Datasets contained in this group                                                                                                                                                                     |
 
 
 (particle-groups-attributes-opt)=
@@ -69,7 +69,7 @@ The following attribute is **optional** on the top-level particle group.
 
 | Name              | Type | Description                                                                                     |
 | ----------------- | ---- | ----------------------------------------------------------------------------------------------- |
-| NumberOfParticles | long | Number of particles (elements/length of first dimension) of each dataset. Must be equal to $N$. |
+| Number_of_particles | long | Number of particles (elements/length of first dimension) of each dataset. Must be equal to $N$. |
 
 (particle-groups-datasets)=
 ### Datasets
@@ -84,39 +84,39 @@ In light of this, datasets types are assumed to be `number[`$N$`]`, unless expli
 
 Since all datasets represent $N$ quantities of something, names should be plural by default, i.e. `InternalEnergies` instead of `InternalEnergy`.
 This does not apply if the main term of the name is the symbolic name (e.g. the Greek symbol).
-For example, `Mdot_Bondi` should not need be converted to `Mdot_Bondis`, though  `BondiAccretionRates` may be clearer.
+For example, `Mdot_Bondi` should not be converted to `Mdot_Bondis`, though  `BondiAccretionRates` would be clearer.
 
  Every dataset must have the following attributes, which describe the dataset, including units and transformation:
 
-| Name                        | Type   | Description                                                                             | Link                                |
-| --------------------------- | ------ | --------------------------------------------------------------------------------------- | ----------------------------------- |
-| Units                       | string | Dataset units                                                                           | [](#pg-units)                       |
-| ConversionFactorCGS         | number | Conversion factor to CGS units, not including cosmological corrections                  | [](#pg-conversionfactorcgs)         |
-| ConversionFactor_PhysCGS    | number | Conversion factor to CGS units, including cosmological corrections                      | [](#pg-conversionfactor_physcgs)    |
-| Description                 | string | Description of the dataset                                                              | [](#pg-description)                 |
-| Expression_for_physical_CGS | string | The condensed expression for converting the dataset units into physical CGS units       | [](#pg-expression_for_physical_cgs) |
-| LossyCompression            | string | Filter used for lossy compression. If no filter is applied, use the empty string, `""`. | [](#pg-lossycompression)            |
-| U_I_exponent                | number  | Power of the [current unit](#unit-table)                                                |                                     |
-| U_L_exponent                | number  | Power of the [length unit](#unit-table)                                                 |                                     |
-| U_M_exponent                | number  | Power of the [mass unit](#unit-table)                                                   |                                     |
-| U_T_exponent                | number  | Power of the [temperature unit](#unit-table)                                            |                                     |
-| U_t_exponent                | number  | Power of the [time unit](#unit-table)                                                   |                                     |
-| a_scale_exponent            | number  | Power of the [scale-factor](#cosmo-scale-factor)                                        |                                     |
-| h_scale_exponent            | number  | Power of the [reduced Hubble constant ($h$)](#cosmo-littleh)                            |                                     |
+| Name                      | Type   | Description                                                                             | Link                              |
+| ------------------------- | ------ | --------------------------------------------------------------------------------------- | --------------------------------- |
+| Units                     | string | Dataset units                                                                           | [](#pg-units)                     |
+| Conversion_factor_CGS     | number | Conversion factor to CGS units, not including cosmological corrections                  | [](#pg-conversion_factor_cgs)     |
+| Conversion_factor_PhysCGS | number | Conversion factor to CGS units, including cosmological corrections                      | [](#pg-conversion_factor_physcgs) |
+| Description               | string | Description of the dataset                                                              | [](#pg-description)               |
+| Phys_CGS_expression       | string | The condensed expression for converting the dataset units into physical CGS units       | [](#pg-phys_CGS_expression)       |
+| Lossy_compression         | string | Filter used for lossy compression. If no filter is applied, use the empty string, `""`. | [](#pg-lossy_compression)         |
+| U_I_exponent              | number | Power of the [current unit](#unit-table)                                                |                                   |
+| U_L_exponent              | number | Power of the [length unit](#unit-table)                                                 |                                   |
+| U_M_exponent              | number | Power of the [mass unit](#unit-table)                                                   |                                   |
+| U_T_exponent              | number | Power of the [temperature unit](#unit-table)                                            |                                   |
+| U_t_exponent              | number | Power of the [time unit](#unit-table)                                                   |                                   |
+| a_scale_exponent          | number | Power of the [scale-factor](#cosmo-scale-factor)                                        |                                   |
+| h_scale_exponent          | number | Power of the [reduced Hubble constant ($h$)](#cosmo-littleh)                            |                                   |
 
 (pg-units)=
 #### Units
 
 Dataset units, e.g. `"cm"` or `"furlongs/fortnight/M_moon"`.
 
-(pg-conversionfactorcgs)=
-#### ConversionFactorCGS
+(pg-conversion_factor_cgs)=
+#### Conversion_factor_CGS
 
 Numerical factor to convert from the [dataset units](#pg-units) to cosmological CGS (like `cm/h`).
 Final numerical result of the quantity $U_I^{\text{U\_I\_Exponent}} \times U_L^{\text{U\_L\_Exponent}} \times U_M^{\text{U\_M\_Exponent}} \times U_T^{\text{U\_T\_Exponent}}\times U_t^{\text{U\_t\_Exponent}}$ where $U_{x}$ are from [`/Units`](#unit-table).
 
-(pg-conversionfactor_physcgs)=
-#### ConversionFactor_PhysCGS
+(pg-conversion_factor_physcgs)=
+#### Conversion_factor_PhysCGS
 
 Numerical factor to convert from the [dataset units](#pg-units) to physical CGS (like `cm`).
 Final numerical result of the quantity $a^{\text{a\_scale\_exponent}} \times h^{\text{h\_scale\_exponent}} \times U_I^{\text{U\_I\_Exponent}} \times U_L^{\text{U\_L\_Exponent}} \times U_M^{\text{U\_M\_Exponent}} \times U_T^{\text{U\_T\_Exponent}}\times U_t^{\text{U\_t\_Exponent}}$ where $U_{x}$ are from [`/Units`](#unit-table).
@@ -127,15 +127,15 @@ Final numerical result of the quantity $a^{\text{a\_scale\_exponent}} \times h^{
 
 Plain description of the quantities in this dataset. For datasets listed in one of the [](#particle-groups-tags), should match or expand the description in the tag.
 
-(pg-expression_for_physical_cgs)=
-#### Expression_for_physical_CGS
+(pg-phys_cgs_expression)=
+#### Phys_CGS_expression
 
-String expression version of [](#pg-conversionfactor_physcgs).
+String expression version of [](#pg-conversion_factor_physcgs).
 Only unit and cosmological factors with non-zero exponents should be included.
 For example, comoving density might be `"a^-3 U_M U_L^-3 [g cm^-3]"`.
 
-(pg-lossycompression)=
-#### LossyCompression
+(pg-lossy_compression)=
+#### Lossy_compression
 
 Name of a lossy compression filter that was applied to this dataset.
 Leave empty if no filter was applied.

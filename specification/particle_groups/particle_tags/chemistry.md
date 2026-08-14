@@ -25,7 +25,7 @@ Continuing the above example would define the following fields:
 /.../Abundances/Metals/XXX2
 /.../Abundances/Metals/...
 /.../Abundances/Metals/TotalAbundances
-/.../Abundances/Metals.MetalOnlyDenominator
+/.../Abundances/Metals.Metal_only_denominator
 ```
 where `XXX1` and `XXX2` are example tracked "metals".
 

@@ -21,7 +21,7 @@ The basic structure is
 ```
 where the `i` in `box_i`/`tree_i` ranges from 0 to the number of cubes ([`NumberOfCubes`](#cubes-number)), e.g. `box_0`, `tree_100`.
 
-The `ParticleType` substructure is duplicated for each [particle type](#header-particlenames) that has a [`ParticleCubes`](https://packingcubes.readthedocs.io/en/latest/Users-Guide/Reference/Cubes/#packingcubes.cubes.ParticleCubes) object associated with it.
+The `ParticleType` substructure is duplicated for each [particle type](#header-particle_names) that has a [`ParticleCubes`](https://packingcubes.readthedocs.io/en/latest/Users-Guide/Reference/Cubes/#packingcubes.cubes.ParticleCubes) object associated with it.
 
 The datasets are defined as follows:
 

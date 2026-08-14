@@ -38,9 +38,9 @@ If the snapshot includes a wind source besides the above-mentioned models, inclu
 
 ## Example Datasets
 
-| Name                     | Description                                                                  |
-| ------------------------ | ---------------------------------------------------------------------------- |
-| AGB/Masses               | Masses of gas that have been produced by AGB stars                           |
-| SNIa/Metal_mass_fraction | Fractions of the particles' masses that are in metals produced by SNIa stars |
+| Name                   | Description                                                                  |
+| ---------------------- | ---------------------------------------------------------------------------- |
+| AGB/Masses             | Masses of gas that have been produced by AGB stars                           |
+| SNIa/MetalMassFraction | Fractions of the particles' masses that are in metals produced by SNIa stars |
 
 

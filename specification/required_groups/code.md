@@ -17,14 +17,14 @@ The `/Code` group contains information about the simulation code used and contai
 | Name                  | Type     | Brief Description                                | Link                       |
 | --------------------- | -------- | ------------------------------------------------ | -------------------------- |
 | Code                  | string   | Identical to `/Header.Code`                      | [](#header-code)           |
-| Code_version          | string   | Descriptive simulation code version string       | [](#Code_version)          |
-| Code_hash             | string   | Computed hash of the simulation code             | [](#Code_hash)             |
+| CodeVersion           | string   | Descriptive simulation code version string       | [](#Code_version)          |
+| CodeHash              | string   | Computed hash of the simulation code             | [](#Code_hash)             |
 | HDF5_version          | string   | Version of the HDF5 library used                 | [](#HDF5_version)          |
 | VCS                   | string   | Version control software used                    | [](#VCS)                   |
 | VCS_id                | string   | VCS identifier                                   | [](#VCS_id)                |
 | VCS_repository        | string   | VCS repository location                          | [](#VCS_repository)        |
-| Library_versions      | string[] | List of versioned external libraries             | [](#Library_versions)      |
-| Configuration_options | string   | Configuration options for running the simulation | [](#Configuration_options) |
+| Library_versions      | string[] | List of versioned external libraries             | [](#Library_Versions)      |
+| Configuration_options | string   | Configuration options for running the simulation | [](#Configuration_Options) |
 
 (Code_version)=
 ### `Code_version`
@@ -66,7 +66,7 @@ Date and timestamp that the simulation code was checked out, in [ISO 8601](wiki:
 
 Array of external libraries used, e.g. FFTW, MPI, GSL, and their version info in the form "Name - vVersion". For example, ["FFTW3 - v3.3.4", "GSL - v2.8"]
 
-(configuration_options)=
+(Configuration_options)=
 ### `Configuration_options`
 
 String containing configuration options for the simulation code. For example, if the code was run via `./simulator -a --optionB parameter_file`, then `Configuration_options` would be "-a --optionB parameter_file"

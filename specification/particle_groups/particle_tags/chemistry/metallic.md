@@ -25,9 +25,9 @@ Molecules are specified with subscripts listed in line, e.g. $\text{C}_{10}H_8$ 
 
 Depending on the chemical abundance tag, the `Metals` subgroup will have an additional **required** attribute:
 
-| Name                 | Type    | Description                                                                                                                                                        | Required For         |
-| -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
-| MetalOnlyDenominator | boolean | Flag specifying whether the summation term in the denominator of the chemical abundance definition only includes metals (`True`) or also includes other chemicals. | Abundance, Mass-Frac |
+| Name                   | Type    | Description                                                                                                                                                        | Required For         |
+| ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
+| Metal_only_denominator | boolean | Flag specifying whether the summation term in the denominator of the chemical abundance definition only includes metals (`True`) or also includes other chemicals. | Abundance, Mass-Frac |
 
 and *recommended* dataset:
 
@@ -115,7 +115,7 @@ Groups: `Abundances/`
 | Metals/Fe             | Iron abundance                                   |
 | Metals/TotalAbundance | Total abundance term. Does not include Hydrogen. |
 
-With the  `/.../Metals.MetalOnlyDenominator` attribute set to `False`.
+With the  `/.../Metals.Metal_only_denominator` attribute set to `False`.
 
 Note that since the original array was the mass-fractions, these values would need to be transformed in a 2-step process:
 $$
@@ -147,7 +147,7 @@ Groups: `MassFraction/`
 | Metals/Fe        | Iron mass-fraction                         |
 | Metals/TotalMass | Total Mass term. Does not include Hydrogen |
 
-With the  `/../MassFraction/Metals.MetalOnlyDenominator` attribute set to `False`.
+With the  `/../MassFraction/Metals.Metal_only_denominator` attribute set to `False`.
 
 `TotalMass` is $x_0$.
 

@@ -44,7 +44,7 @@ If the snapshot includes a feedback source besides the above-mentioned models, i
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Densities_at_last_event     | Physical density (not subgrid) of the particle at the last feedback event. -1 if particles have never been affected.                                  |
 | Densities_before_last_event | Physical density (not subgrid) of the particle immediately prior to the last feedback event. -1 if particles have never been affected.                |
-| AGN/Energies_received       | Total amount of thermal energy from AGN feedback events received by the particles.                                                                    |
+| AGN/ReceivedEnergies        | Total amount of thermal energy from AGN feedback events received by the particles.                                                                    |
 | SNII/Heated_by_feedback     | Flags the particles that have been directly hit by an SNII feedback event at some point in the past. If >0, contains the number of individual events. |
-| Last_event_scale_factor     | Scale-factors at which the particles were last hit by a feedback event. -1 if a particle has never been hit by feedback                               |
+| ScaleFactors_at_last_event  | Scale-factors at which the particles were last hit by a feedback event. -1 if a particle has never been hit by feedback                               |
 

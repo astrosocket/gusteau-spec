@@ -15,11 +15,11 @@ Table of quantities used in multiple places throughout.
 
 (quantity-table)=
 
-| Name | Brief Description                | Definition                                   |
-| ---- | -------------------------------- | -------------------------------------------- |
-| $P$  | Number of unique particle types  | [`ParticleNames`](#header-ParticleNames)     |
-| $N$  | Number of particles in that type | [`ParticleNumbers`](#header-ParticleNumbers) |
-| $D$  | Dimensionality of the simulation | [`Dimension`](#header-Dimension)             |
+| Name | Brief Description                | Definition                                     |
+| ---- | -------------------------------- | ---------------------------------------------- |
+| $P$  | Number of unique particle types  | [`Particle_names`](#header-Particle_names)     |
+| $N$  | Number of particles in that type | [`Particle_numbers`](#header-Particle_Numbers) |
+| $D$  | Dimensionality of the simulation | [`Dimension`](#header-Dimension)               |
 
 (field-notation)=
 ### Fields
@@ -51,14 +51,32 @@ They are described in the [Optional Groups](#Optional-Groups) subsection.
 ### Field names 
 
 `Attribute`, `Dataset`, and `Group` names should not contain any punctuation or whitespace besides _ (underscores).
-Field names must start with a valid ASCII letter (a-zA-Z)[^ascii].
+Field names must start with a valid ASCII letter (a-zA-Z)[^ascii], generally upper-case, unless representing a specific, lower-case quantity (e.g. "little-h", $h$).
 Upper and lower case names are distinct, so for example, `h` and `H` could be different attributes under `/Cosmology` (though see [](#Attribute-units), below).
-Whitespace should be converted to underscores; punctuation should be converted to underscores or omitted on a case by case basis.
+Whitespace should be converted to underscores or omitted; punctuation should be converted to underscores or omitted on a case by case basis.
 For example, the field `Conversion factor to CGS (not including cosmological corrections)` could be converted to `Conversion_factor_to_CGS_not_including_cosmological_corrections`.
 
-There is no preference for CamelCase vs snake_case; either is valid but clarity is most important.
+As fields are intended to be directly mapped to variable names, brevity is important, but not at the expense of clarity.
+So we have mapped `Conversion factor to CGS (not including cosmological corrections)` to `Conversion_factor_CGS` (see also [Units](#attribute-units)).
+
+Multi-word attributes are defined in snake_case (technically a combination of snake_case and Sentence case[^gusteau-case]).
+Multi-word datasets and groups will generally be PascalCase.
+Underscores may remain, however, for clarity or to replace punctuation.
+For example, upper-case letters, like in a acronym, should be separated by an underscore from other upper-case letters; `AGN_Feedback` is easier to read than `AGNFeedback`.
+`FromParent-Gas` would become `FromParent_Gas`.
+
+Dataset/group names should generally be in the form `Nouns`, `AdjectiveNouns`, or `AdjectiveNouns_with_a_phrase`.
+A noun can be a `CompoundNoun`.
+Datasets representing single flags can be referenced as `Adjective_with_phrase`, however.
+(Datasets representing multiple flags are likely better described with the `AdjectiveNoun` version, like `GrowthFlags`.)
+
+Attribute names should be similar, just using snake case.
+For example, `Omega_matter`, `Software_version`, `Critical_density_at_z0`.
+
 
 [^ascii]: The ASCII restriction comes from HDF5; we restrict the first character so that the field name can usually be used as a variable name directly.
+
+[^gusteau-case]: Since this combination does not seem to have a name [Cases Classification](https://caseutil.readthedocs.io/en/latest/classification/),[](wiki:Naming_convention_(programming)#Multiple-word_identifiers), the authors hereby put forward Gusteau_case.
 
 (field-types)=
 ### Field types
@@ -87,6 +105,9 @@ They can be designated via `_NAME`, e.g. `_CGS` or `_IU`.
   So if `M_hydrogen_NAT` is approximated as 1 via, e.g. $m_{\rm proton} =1$, `StellarMass_NAT` must also be given in terms of units of $m_{\rm proton}$.
  * SI or MKS - metric system.
   Quantities must be in the SI base units (kg, s, m, A, K, mol, cd)
+
+Likewise, _physical_ attributes, i.e. that include the cosmological term should have `Phys` prepended to the unit system, unless that is part of the internal unit.
+For example, particle datasets have the attributes `ConversionFactor_CGS` and `ConversionFactor_PhysCGS`.
 
 Note that these rules only apply to `Attribute`s.
 `Dataset`s have different rules (see eg. [](#particle-groups-datasets)), though dataset _attributes_ should follow these rules.

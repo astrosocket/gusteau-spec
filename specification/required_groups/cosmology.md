@@ -36,8 +36,8 @@ Likewise the default value is  `-1` unless specified.
 | Universe_age           |                          | [](#cosmo-universe_age)           |
 | a_begin                |                          | [](#cosmo-a_begin)                |
 | a_end                  |                          | [](#cosmo-a_end)                  |
-| time_begin             |                          | [](#cosmo-time_begin)             |
-| time_end               |                          | [](#cosmo-time_end)               |
+| Time_begin             |                          | [](#cosmo-time_begin)             |
+| Time_end               |                          | [](#cosmo-time_end)               |
 | w                      |                          | [](#cosmo-w)                      |
 | w_0                    |                          | [](#cosmo-w_0)                    |
 | w_a                    |                          | [](#cosmo-w_a)                    |
@@ -179,12 +179,12 @@ Initial scale-factor for the simulation.
 Final scale-factor for the simulation.
 
 (cosmo-time_begin)=            
-### `time_begin`
+### `Time_begin`
 
 Initial time of the simulation in Internal Units.
 
 (cosmo-time_end)=
-### `time_end`
+### `Time_end`
 
 Final time of the simulation in Internal Units.
 

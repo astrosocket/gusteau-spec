@@ -18,10 +18,10 @@ Particles with this tag **must** include the subgroup `Subfind` with the followi
 
 ## Attributes
 
-| Name              | Type                 | Description                                                                                                                                           |
-| ----------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NumNearest        | number               | The threshold of nearest particles used                                                                                                               |
-| DarkMatterSpecies | number[] or string[] | List of particle types considered as DarkMatter in the same format as [`/Header.ParticleNames`](#header-ParticleNames) or as indices into that array. |
+| Name                | Type                 | Description                                                                                                                                             |
+| ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Num_nearest         | number               | The threshold of nearest particles used                                                                                                                 |
+| Dark_matter_species | number[] or string[] | List of particle types considered as DarkMatter in the same format as [`/Header.Particle_names`](#header-Particle_names) or as indices into that array. |
 
 ## Datasets
 

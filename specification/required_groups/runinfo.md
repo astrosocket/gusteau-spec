@@ -7,12 +7,12 @@ The `Parameters` and `ParameterFiles` groups are "Best-Effort"; the remainder ar
 
 ## Attributes
 
-| Name           |  Type  | Brief Description           | Link                    |           Default Value            |
-| -------------- | :----: | --------------------------- | ----------------------- | :--------------------------------: |
-| System         | string | Host machine name           | [](#run-system)         |                 ""                 |
-| SnapshotDate   | string | Snapshot creation time      | [](#run-snapshotdate)   | [snapshot file creation timestamp] |
-| TotalRuntime   | number | Total simulation run time   | [](#run-totalruntime)   |                 -1                 |
-| SessionRuntime | number | Simulation session run time | [](#run-sessionruntime) |                 -1                 |
+| Name            |  Type  | Brief Description           | Link                     |           Default Value            |
+| --------------- | :----: | --------------------------- | ------------------------ | :--------------------------------: |
+| System          | string | Host machine name           | [](#run-system)          |                 ""                 |
+| Snapshot_date   | string | Snapshot creation time      | [](#run-snapshot_date)   | [snapshot file creation timestamp] |
+| Total_runtime   | number | Total simulation run time   | [](#run-total_runtime)   |                 -1                 |
+| Session_runtime | number | Simulation session run time | [](#run-session_runtime) |                 -1                 |
 
 
 (run-system)=
@@ -20,20 +20,20 @@ The `Parameters` and `ParameterFiles` groups are "Best-Effort"; the remainder ar
 
 The `System` field contains the name of the "host" machine, e.g. where the MPI rank 0 was placed for MPI simulation codes. Generally on a cluster, this name is whatever UNIX’s `gethostname()` function returns on that system on the primary node. 
 
-(run-snapshotdate)=
-### `SnapshotDate`
+(run-snapshot_date)=
+### `Snapshot_date`
 
-The `SnapshotDate` field contains the date and time when the file was written in ISO 8601 (extended) format. This should be identical to [`/Header.SnapshotDate`](#header-snapshotdate).
+The `SnapshotDate` field contains the date and time when the file was written in ISO 8601 (extended) format. This should be identical to [`/Header.Snapshot_date`](#header-snapshot_date).
 
-(run-totalruntime)=
-### `TotalRuntime`
+(run-total_runtime)=
+### `Total_runtime`
 
-The total simulation run time (using system time as opposed to e.g. wall clock time) up until this snapshot was produced in seconds. If the simulation was run over multiple sessions (e.g. continued/restarted from a snapshot or restart file), this field should be the sum over each of those sessions' runtime. See also [](#run-sessionruntime).
+The total simulation run time (using system time as opposed to e.g. wall clock time) up until this snapshot was produced in seconds. If the simulation was run over multiple sessions (e.g. continued/restarted from a snapshot or restart file), this field should be the sum over each of those sessions' runtime. See also [](#run-session_runtime).
 
-(run-sessionruntime)=
-### `SessionRuntime`
+(run-session_runtime)=
+### `Session_runtime`
 
-The simulation run time (using system time as opposed to e.g. wall clock time) up until this snapshot was produced in seconds. If the simulation was run over multiple sessions (e.g. continued/restarted from a snapshot or restart file), this field should only be the run time of the session that produced this snapshot. May be identical to [](#run-totalruntime) if there was only one session.
+The simulation run time (using system time as opposed to e.g. wall clock time) up until this snapshot was produced in seconds. If the simulation was run over multiple sessions (e.g. continued/restarted from a snapshot or restart file), this field should only be the run time of the session that produced this snapshot. May be identical to [](#run-total_runtime) if there was only one session.
 
 (run-subgroups)=
 ## Subgroups
@@ -57,31 +57,31 @@ Instead, the possible parameters are considered "Best-Effort", with defaults spe
 
 The `ParameterFiles` group has two specified `Attribute`s and additional unspecified, optional `Attribute`s. 
 
-| Name              | Description                                   | Link                                      |
-| ----------------- | --------------------------------------------- | ----------------------------------------- |
-| ParameterFile     | Text contents of main parameter file or error | [](#run-parameterfiles-parameterfile)     |
-| ParameterFilePath | File path of main parameter file              | [](#run-parameterfiles-parameterfilepath) |
+| Name                | Description                                   | Link                                        |
+| ------------------- | --------------------------------------------- | ------------------------------------------- |
+| Parameter_file      | Text contents of main parameter file or error | [](#run-parameterfiles-parameter_file)      |
+| Parameter_file_path | File path of main parameter file              | [](#run-parameterfiles-parameter_file_path) |
 
 Additional parameter files can be included via the same mechanism, using descriptive names for each parameter file.
 For example, a `GIZMO` run might include the "OutputList"/"Snapshot_Times_Table" file and the "GrackleData" file as:
 
-| Name                  | Description                             |
-| --------------------- | --------------------------------------- |
-| SnapshotTimesFile     | Text contents of the "OutputListFile"   |
-| SnapshotTimesFilepath | File path of the `SnapshotTimesFile`    |
-| GrackleDataFile       | Text contensts of the "GrackleDataFile" |
-| GrackleDataFilePath   | File path of the `GrackleDataFile`      |
+| Name                     | Description                            |
+| ------------------------ | -------------------------------------- |
+| Snapshot_times_file      | Text contents of the "OutputListFile"  |
+| Snapshot_times_file_path | File path of the "SnapshotTimesFile"   |
+| Grackle_data_file        | Text contents of the "GrackleDataFile" |
+| Grackle_data_file_path   | File path of the "GrackleDataFile"     |
 
-with definitions analogous to [](#run-parameterfiles-parameterfile) and [](#run-parameterfiles-parameterfilepath)
+with definitions analogous to [](#run-parameterfiles-parameter_file) and [](#run-parameterfiles-parameter_file_path)
 
-(run-parameterfiles-parameterfile)=
-#### `ParameterFile`
+(run-parameterfiles-parameter_file)=
+#### `Parameter_file`
 
-The `ParameterFile` attribute should be a string containing the text contents of the primary parameter file.
+The `Parameter_file` attribute should be a string containing the text contents of the primary parameter file.
 If that is not an applicable concept for the simulation code, the field should be the text "N/D".
 If the file is not available (e.g. not found, unparseable, etc.), the field should be the text "N/A".
 
-(run-parameterfiles-parameterfilepath)=
-#### `ParameterFilePath`
+(run-parameterfiles-parameter_file_path)=
+#### `Parameter_file_path`
 
-The `ParameterFilePath` attribute should be a string containing the absolute file path of the parameter file or an empty string if it does not exist. 
+The `Parameter_file_path` attribute should be a string containing the absolute file path of the parameter file or an empty string if it does not exist. 
