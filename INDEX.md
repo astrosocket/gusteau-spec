@@ -2,7 +2,7 @@
 
 Specification for the **G**rand **U**nified **S**napshot **T**hat **E**veryone **A**grees **U**pon.
 
-Version: 0.1.0
+Version: 0.2.0
 
 (index-abstract)=
 ## Abstract
