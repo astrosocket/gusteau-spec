@@ -108,6 +108,8 @@ For example, `Mdot_Bondi` should not be converted to `Mdot_Bondis`, though  `Bon
 #### Units
 
 Dataset units, e.g. `"cm"` or `"furlongs/fortnight/M_moon"`.
+Note that since the scale factor (`a`) and Hubble parameter (`h`) are **not** units, they should not be included here.
+Also note that for translated snapshots, the units may be identical to [](#phys_cgs_expression) without the term in brackets if computed from the exponent terms, since a nice expression (like 1 `U_I` $\equiv$ 1 Mpc) for the code units may not exist.
 
 (pg-conversion_factor_cgs)=
 #### Conversion_factor_CGS
