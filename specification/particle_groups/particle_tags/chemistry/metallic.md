@@ -131,7 +131,7 @@ $$
 :::{tab-item} Mass Fraction
 :sync: mass-frac
 
-Groups: `MassFraction/`
+Groups: `MassFractions/`
 
 | Name               | Description                                |
 | ------------------ | ------------------------------------------ |
