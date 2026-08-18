@@ -133,23 +133,23 @@ $$
 
 Groups: `MassFraction/`
 
-| Name             | Description                                |
-| ---------------- | ------------------------------------------ |
-| Helium/He        | Helium mass-fraction                       |
-| Metals/C         | Carbon mass-fraction                       |
-| Metals/N         | Nitrogen mass-fraction                     |
-| Metals/O         | Oxygen mass-fraction                       |
-| Metals/Ne        | Neon mass-fraction                         |
-| Metals/Mg        | Magnesium mass-fraction                    |
-| Metals/Si        | Silicon mass-fraction                      |
-| Metals/S         | Sulfur mass-fraction                       |
-| Metals/Ca        | Calcium mass-fraction                      |
-| Metals/Fe        | Iron mass-fraction                         |
-| Metals/TotalMass | Total Mass term. Does not include Hydrogen |
+| Name               | Description                                |
+| ------------------ | ------------------------------------------ |
+| Helium/He          | Helium mass-fraction                       |
+| Metals/C           | Carbon mass-fraction                       |
+| Metals/N           | Nitrogen mass-fraction                     |
+| Metals/O           | Oxygen mass-fraction                       |
+| Metals/Ne          | Neon mass-fraction                         |
+| Metals/Mg          | Magnesium mass-fraction                    |
+| Metals/Si          | Silicon mass-fraction                      |
+| Metals/S           | Sulfur mass-fraction                       |
+| Metals/Ca          | Calcium mass-fraction                      |
+| Metals/Fe          | Iron mass-fraction                         |
+| Metals/TotalMasses | Total Mass term. Does not include Hydrogen |
 
 With the  `/../MassFraction/Metals.Metal_only_denominator` attribute set to `False`.
 
-`TotalMass` is $x_0$.
+`TotalMasses` is $x_0$.
 
 :::
 ::::
