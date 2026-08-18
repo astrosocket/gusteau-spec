@@ -17,8 +17,8 @@ The `/Code` group contains information about the simulation code used and contai
 | Name                  | Type     | Brief Description                                | Link                       |
 | --------------------- | -------- | ------------------------------------------------ | -------------------------- |
 | Code                  | string   | Identical to `/Header.Code`                      | [](#header-code)           |
-| CodeVersion           | string   | Descriptive simulation code version string       | [](#Code_version)          |
-| CodeHash              | string   | Computed hash of the simulation code             | [](#Code_hash)             |
+| Code_version          | string   | Descriptive simulation code version string       | [](#Code_version)          |
+| Code_hash             | string   | Computed hash of the simulation code             | [](#Code_hash)             |
 | HDF5_version          | string   | Version of the HDF5 library used                 | [](#HDF5_version)          |
 | VCS                   | string   | Version control software used                    | [](#VCS)                   |
 | VCS_id                | string   | VCS identifier                                   | [](#VCS_id)                |
