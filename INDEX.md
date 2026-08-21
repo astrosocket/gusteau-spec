@@ -43,3 +43,8 @@ The names and meanings of the fields are community-driven, and it's easy to [pro
 
 
 See also our companion projects, [gusteau-translate](github.com/astrosocket/gusteau-translate) and [packingcubes](packingcubes.readthedocs.io)!
+
+(index-acknowledgements)=
+## Acknowledgements
+
+Supported by the National Science Foundation through [Award 2513426](https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2513426).
