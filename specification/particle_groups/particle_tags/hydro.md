@@ -19,3 +19,5 @@ Generally, these particles map to some sort of volume element and are not simply
 | InternalEnergies | Particle-specific internal energy per unit mass                          |
 | Densities        | Particle-specific density at this coordinate position                    |
 | KernelLengths    | Kernel length for resolution elements, e.g. the smoothing length for SPH |
+
+The `KernelLengths` dataset is **optional**. `InternalEnergies` and `Densities` are **required**.
