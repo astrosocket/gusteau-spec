@@ -100,7 +100,14 @@ For example, they do not need to load or render particles outside the bounding b
 (header-time)=
 ### `Time `
 
-Snapshot time in internal units.
+Snapshot time in internal units or, if not possible, the negative of the scale-factor. 
+
+:::{admonition}
+:class: caution
+Ideally, this field would be the snapshot time, since the scale-factor information is already carried by `Redshift`.
+However, some simulations, especially older ones, do not output that quantity.
+In those situations, supply the *negative* of the scale-factor for this field.
+:::
 
 (header-run_name)=
 ### `Run_name`
