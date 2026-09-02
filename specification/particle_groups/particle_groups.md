@@ -94,7 +94,7 @@ For example, `Mdot_Bondi` should not be converted to `Mdot_Bondis`, though  `Bon
 | Conversion_factor_CGS     | number | Conversion factor to CGS units, not including cosmological corrections                  | [](#pg-conversion_factor_cgs)     |
 | Conversion_factor_PhysCGS | number | Conversion factor to CGS units, including cosmological corrections                      | [](#pg-conversion_factor_physcgs) |
 | Description               | string | Description of the dataset                                                              | [](#pg-description)               |
-| Phys_CGS_expression       | string | The condensed expression for converting the dataset units into physical CGS units       | [](#pg-phys_CGS_expression)       |
+| Phys_CGS_expression       | string | The condensed expression for converting the dataset units into physical CGS units       | [](#pg-phys_cgs_expression)       |
 | Lossy_compression         | string | Filter used for lossy compression. If no filter is applied, use the empty string, `""`. | [](#pg-lossy_compression)         |
 | U_I_exponent              | number | Power of the [current unit](#unit-table)                                                |                                   |
 | U_L_exponent              | number | Power of the [length unit](#unit-table)                                                 |                                   |
@@ -109,7 +109,7 @@ For example, `Mdot_Bondi` should not be converted to `Mdot_Bondis`, though  `Bon
 
 Dataset units, e.g. `"cm"` or `"furlongs/fortnight/M_moon"`.
 Note that since the scale factor (`a`) and Hubble parameter (`h`) are **not** units, they should not be included here.
-Also note that for translated snapshots, the units may be identical to [](#phys_cgs_expression) without the term in brackets if computed from the exponent terms, since a nice expression (like 1 `U_I` $\equiv$ 1 Mpc) for the code units may not exist.
+Also note that for translated snapshots, the units may be identical to [](#pg-phys_cgs_expression) without the term in brackets if computed from the exponent terms, since a nice expression (like 1 `U_I` $\equiv$ 1 Mpc) for the code units may not exist.
 
 (pg-conversion_factor_cgs)=
 #### Conversion_factor_CGS
