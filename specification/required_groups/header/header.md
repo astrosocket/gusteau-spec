@@ -50,7 +50,7 @@ A non-exclusive list of possible values is provided here:
 ### `Source`
 
 The `Source` field should correspond to one of
-1. `GUSTEAUvX.Y.Z`, where `X.Y.Z`  are the `Major.Minor.Patch` version numbers (so a snapshot following the format in this document would be `GUSTEAUv0.1.0`)
+1. `GUSTEAUvX.Y.Z`, where `X.Y.Z`  are the `Major.Minor.Patch` version numbers (so a snapshot following the format in this document would be `GUSTEAUv0.3.0`)
 2. The [translations][translations] provided with Project GUSTEAU. See the [list](https://) of provided translations.
 3. The full file path of a custom `.translation` file. So a `GizmoR2020.translation` file would be e.g. `/Data/user012345/GizmoR2020.translation`
 
