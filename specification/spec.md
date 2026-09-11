@@ -90,7 +90,7 @@ So a `number` type could be stored as any of the integer or floating types avail
 ### Attribute units
 
 Some attributes are unit-ful and/or cosmological quantities (e.g. `/Header.Time_CGS`).
-If units are not specified, assume that they are in the internal unit system (see [](#Units)).
+If units are not specified, assume that they are in the internal unit system (see [](#Units)), including any cosmological terms[^cosmological_attributes].
 If not in internal units, specify the units in the name, i.e. `Time_CGS` or `Time_Gyr` as opposed to just `Time`.
 Four abbreviations are also available for simplicity.
 They can be designated via `_NAME`, e.g. `_CGS` or `_IU`.
@@ -111,6 +111,13 @@ For example, particle datasets have the attributes `ConversionFactor_CGS` and `C
 
 Note that these rules only apply to `Attribute`s.
 `Dataset`s have different rules (see eg. [](#particle-groups-datasets)), though dataset _attributes_ should follow these rules.
+
+[^cosmological_attributes]: As an example, `/Header.Bounding_box` is given in internal length units, like "ckpc/_h_". 
+    So to convert to CGS units: `Bounding_box_CGS = /Header.Bounding_box * /Units.Unit_length_CGS`.
+    
+    But note that those are actually comoving "cm/_h_".
+    To get to _physical_ CGS units, it would be `Bounding_box_PhysCGS = /Header.Bounding_box * /Units.Unit_length_PhysCGS`, or `Bounding_box_PhysCGS = /Header.Bounding_box * /Units.Unit_length_CGS / /Header.HubbleParam / (1 + /Header.Redshift)` (all fields guaranteed to be present) or `Bounding_box_PhysCGS = /Header.Bounding_box * /Units.Unit_length_CGS * /Cosmology.Scale_factor / /Cosmology.h`. 
+    Obviously, using the `Unit_X_PhysCGS` terms is simplest.
 
 (field-best-effort)=
 ### Required vs. "Best Effort" vs Optional Fields
