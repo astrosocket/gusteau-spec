@@ -161,8 +161,8 @@ SmoothedPotentials
 SmoothedCarbonAbundance
 ...
 ```
-Clearly, this can be tagged `Massive`, `Potential`, and `Metallic`, but that ignores the `SmoothedXXXX` fields.
-Our recommendation would be a `Smoothed` subgroup, also tagged with `Massive`, `Potential`, and `Metallic`, guaranteeing the presence and meaning of the subfields.
+Clearly, this can be tagged `Massive`, `Potential`, `Carbon`, and `Abundance`, but that ignores the `SmoothedXXXX` fields.
+Our recommendation would be a `Smoothed` subgroup, also tagged with `Massive`, `Potential`, `Carbon`, and `Abundance`, guaranteeing the presence and meaning of the subfields.
 
 If a field has a more descriptive name, but acts like the more generic field under a tag, we recommend using a hard link for the tag name.
 For example, a `FOF` (Friends-Of-Friends) subgroup might have a `FOFGroupID`, which acts like a `Group`'s `GroupIDs`.
