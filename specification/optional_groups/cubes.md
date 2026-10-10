@@ -1,5 +1,12 @@
 (cubes)=
-# Cubes
+# (Deprecated) Cubes
+
+:::{admonition} Deprecated
+:class: warning
+This group has been deprecated in favor of the [](#cells) group and the [Reordered](#tag-reordered) tag.
+It will be removed after the next minor revision or before the next major revision.
+:::
+
 This group contains the serialized data needed for the [`packingcubes`](packingcubes.readthedocs.io) structures.
 
 :::{admonition}

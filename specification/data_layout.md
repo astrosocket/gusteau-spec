@@ -34,7 +34,7 @@ These layouts can be recursive as well, for example multiple levels of cells, wi
 Optionally on GUSTEAU creation or {term}`translation` some or all of the particle data can be run through the [`packingcubes`](packingcubes.readthedocs.io) tool.
 `packingcubes` will chunk the data into a coarse, user-specified top-level grid, with the option to use any already-present top-level cell/chunk structure.
 `packingcubes` will then spatially sort the particle data in each cell (aka "packing cube"), analogous to a [Z-order](wiki:Z-order_curve)[^future-z] curve, and create a [PackedTree](https://packingcubes.readthedocs.io/en/latest/Users-Guide/Reference/packed_format/) ("Packed Oct-tree") for each cube.
-These packing cubes can be found in the [`/Cubes`](#cubes) optional group and used with the `packingcubes` package to perform fast ($\log{N}$) spatial searching of particle data.
+These packing cubes can be found in the [](#cells) required group and used with the `packingcubes` package to perform fast ($\log{N}$) spatial searching of particle data.
 
 
 [^future-z]: Currently. This may be changed in the future to Hilbert curve variant, or potentially even made user-configurable.
