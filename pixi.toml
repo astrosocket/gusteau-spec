@@ -15,8 +15,7 @@ mclean = "myst clean"
 
 [dependencies]
 python = ">=3.14.7,<3.15"
-mystmd = ">=1.10.1,<2"
-imagemagick = ">=7.1.2_30,<8"
+imagemagick = ">=7.1.2_31,<8"
 mdformat = ">=1.0.0,<2"
 mdformat-myst = ">=0.3.0,<0.4"
 pdf2svg = ">=0.2.4,<0.3"
@@ -24,3 +23,4 @@ pdf2svg = ">=0.2.4,<0.3"
 [pypi-dependencies]
 mdformat-simple-breaks = ">=0.1.0, <0.2"
 mdformat-toc = ">=0.5.0, <0.6"
+mystmd = ">=1.11.0, <2"
