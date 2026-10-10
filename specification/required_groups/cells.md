@@ -162,6 +162,17 @@ The `/Cells` group contains the following subgroups.
 Each subgroup contains $P$ datasets, one for each particle type, that specify the described quantity for that particle type.
 For example, `/Cells/Counts/gas` would be a $[C,1]$ array specifying the number of gas particles in each cell, `/Cells/Counts/stars` would specify the number of star particles per cell, etc.
 
+All subgroups have an attribute, "Description", with the value in this table:
+
+| Name                     | Description                                                                            |
+| ------------------------ | -------------------------------------------------------------------------------------- |
+| [](#cells-Counts)        | The number of particles of the particular type.                                        |
+| [](#cells-Files)         | The number of the actual file containing the cell's particles.                         |
+| [](#cells-MaxPositions)  | Maximum coordinates of the particular particle type for that cell in simulation units. |
+| [](#cells-MinPositions)  | Minimum coordinates of the particular particle type for that cell in simulation units. |
+| [](#cells-OffsetsInFile) | Index to the start of the cell in the file it's stored in.                             |
+
+
 (cells-Counts)=
 ### `/Cells/Counts`
 The number of particles of the particular type.
@@ -169,6 +180,7 @@ The number of particles of the particular type.
 (cells-Files)=
 ### `/Cells/Files`
 The number of the actual file containing the cell's particles.
+
 Only relevant when the number of files ([`/Header.Num_files_per_snapshot`]) is $>1$.
 Thus, if `/Cells/Files/gas[42] = 15`, then the gas particles for cell 42 are all contained in the 15th partfile.
 
@@ -191,15 +203,18 @@ If the cell does contain particles, then the min position is strictly contained 
 (cells-OffsetsInFile)=
 ### `/Cells/OffsetsInFile`
 Index to the start of the cell in the file it's stored in. 
-_(Not the overall array!)_
+
+Note that this is specific to the containing file, not the overall array!
+
 See [](#cells-single-cell) for more details
 
-(cells-Trees)
+(cells-Trees)=
 ## The `/Cells/Trees` Subgroup
 The `Trees` subgroup is optional and is only present when packing cubes is used.
-It has a slightly different structure than the [](#cells-subgroups) and so has been separated out.
+It has a slightly different structure than the [](#cells-subgroups) and so has been separated out, but it otherwise behaves similarly.
 
-The `Trees` subgroup stores the `PackedTree` data for each cell.
+**Description**: The `Trees` subgroup stores the `PackedTree` data for each cell.
+
 Since the length of the tree data depends on the number of particles in cell, vertically concatenating the trees into a $C$-row dataset would produce a ragged matrix, which does not support efficient, rapid access.
 Instead, each tree is stored as a separate dataset, with `tree_i` corresponding to `cell_i`, aka the $i$th row.
 
