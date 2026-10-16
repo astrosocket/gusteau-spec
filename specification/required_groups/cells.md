@@ -168,6 +168,7 @@ All subgroups have an attribute, "Description", with the value in this table:
 | ------------------------ | -------------------------------------------------------------------------------------- |
 | [](#cells-Counts)        | The number of particles of the particular type.                                        |
 | [](#cells-Files)         | The number of the actual file containing the cell's particles.                         |
+| [](#cells-Indices)       | The overall cell index into the virtual dataset.                                       |
 | [](#cells-MaxPositions)  | Maximum coordinates of the particular particle type for that cell in simulation units. |
 | [](#cells-MinPositions)  | Minimum coordinates of the particular particle type for that cell in simulation units. |
 | [](#cells-OffsetsInFile) | Index to the start of the cell in the file it's stored in.                             |
@@ -183,6 +184,13 @@ The number of the actual file containing the cell's particles.
 
 Only relevant when the number of files ([`/Header.Num_files_per_snapshot`]) is $>1$.
 Thus, if `/Cells/Files/gas[42] = 15`, then the gas particles for cell 42 are all contained in the 15th partfile.
+
+(cells-Indices)=
+### `/Cells/Indices`
+The overall cell index into the virtual dataset.
+
+Note that this is potentially different from [](#cells-OffsetsInFile), which is the cell index in the particular file it's stored in.
+For single-part files these are identical.
 
 (cells-MaxPositions)=
 ### `/Cells/MaxPositions`
@@ -205,6 +213,7 @@ If the cell does contain particles, then the min position is strictly contained 
 Index to the start of the cell in the file it's stored in. 
 
 Note that this is specific to the containing file, not the overall array!
+For single-part files it is identical to [](#cells-Indices).
 
 See [](#cells-single-cell) for more details
 
