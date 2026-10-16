@@ -91,7 +91,7 @@ Either the particle type is massless (and ideally uses the appropriate tag) or t
 ### `Bounding_box `
 
 Specify the region of interest for the simulation as `[x, y, z, dx, dy, dz]`, where `x/y/z` are the coordinates of the left-front-bottom vertex and `dx/y/z` are the width-depth-height of the box.
-Note that if [[#`Dimension`|the dimension]] is less than 3, the corresponding terms can be skipped (i.e. `BoundingBox=[x, dx]` for 1D). 
+Note that if [the dimension](#header-dimension) is less than 3, the corresponding terms can be skipped (i.e. `BoundingBox=[x, dx]` for 1D). 
 `x/y/z` can be positive or negative; `dx/y/z` must be non-negative.
 
 Particles are not required to be in contained in the `Bounding_box`, but likewise `Project GUSTEAU`-compatible software are not required to treat particles outside the bounding box in the same fashion as interior particles.
