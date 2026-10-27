@@ -176,7 +176,7 @@ Every field additionally has the following information included[^hyphens]:
 | `-attrs` | Location of attribute dictionaries for Group/Datasets. Empty if a link or attribute. |
 | `-path` | The fully qualified path of the _referenced_ object. This is the linked path for links, otherwise it's the full name of the object |
 
-[^hyphens]: Note that since hyphens are forbidden from field names in GUSTEAU, it's totally fine to have a field named "path" or even "attrs", though we don't recommend it.
+[^hyphens]: Note that since hyphens are generally forbidden from field names in GUSTEAU (unless required for backwards compatability), it's totally fine to have a field named "path" or even "attrs", though we don't recommend it.
 
 So for example, for a file with the following
 
