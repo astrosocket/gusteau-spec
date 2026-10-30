@@ -29,6 +29,7 @@ The following attributes are required and are described in the remainder of this
 | Part_type_mapping      |  int[6] or string[6]   | Particle name mapping to `PartType0`, `PartType1`, etc | [](#header-part_type_mapping)      | See description        |
 | Snapshot_date          |         string         | Snapshot creation timestamp                            | [](#header-Snapshot_Date)          | snapshot creation time |
 | Redshift               |         number         | Cosmological redshift of this snapshot                 | [](#header-Redshift)               | 0                      |
+| This_file              |          int           | Index of this file                                     | [](#header-file_index)             | -1                     |
 
 (header-code)=
 ### `Code`
@@ -157,6 +158,16 @@ Defaults to 0.
 Only well defined if simulation is cosmological (`/Cosmology.IsCosmological` is `True`),  and/or `Time`=0.
 Identical to [`/Cosmology.Redshift`](#cosmo-redshift), if present.
 
+(header-file_index)=
+### `File_index`
+
+The index of this file.
+Defaults to -1.
+
+A nonnegative value ($i$) signifies that this file is the $i$th file out of [](#header-num_files_per_snapshot) and contains the cells with [`/Cells/Files/$particle_type`](cells-files) `== `$i$.
+
+A $-1$ signifies that this file is the primary file and contains either the entire dataset (for single-part files) or the virtual dataset (for multi-part files).
+For single-part files, this file is also the only file.
 
 ## Gadget-2
 :::{include} gadget-2.md
