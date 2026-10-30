@@ -8,6 +8,8 @@ A number of fields are copied directly from the Swift format for backwards compa
 As such the naming conventions and other aspects in the following may not match the rest of the GUSTEAU standard.
 :::
 
+## Introduction
+
 GUSTEAU enforces a top-level grid structure on all particles, called cells, similar to that found in [Swift](https://swift.strw.leidenuniv.nl/docs/Snapshots/index.html#quick-access-to-particles-via-hash-tables).
 
 Every cell contains some number of particles, say $n_i$, and for given particle $P_j$, will contain all of the information about that particle.
@@ -219,7 +221,7 @@ See [](#cells-single-cell) for more details
 
 (cells-Trees)=
 ## The `/Cells/Trees` Subgroup
-The `Trees` subgroup is optional and is only present when packing cubes is used.
+The `Trees` subgroup is optional and is only present when `packingcubes` is used.
 It has a slightly different structure than the [](#cells-subgroups) and so has been separated out, but it otherwise behaves similarly.
 
 **Description**: The `Trees` subgroup stores the `PackedTree` data for each cell.
@@ -248,6 +250,14 @@ So an example layout could look like
 :class: help
 Since this can be difficult to easily parse when manually exploring, we are actively exploring other organizational layouts.
 If you have a better idea, please contact us!
+:::
+
+:::{admonition} For simulation code developers
+:class: tip
+:class: dropdown
+If your simulation already structures the data in an octree, you can output the trees directly, rather than relying on a post-processing `packingcubes` pass.
+Just ensure the output follows the tree structure laid out in the [Packed Format Design Specification](https://packingcubes.readthedocs.io/en/latest/Users-Guide/Reference/packed_format/) and the layout here.
+`packingcubes` (or other software) can then read the trees directly.
 :::
 
 
