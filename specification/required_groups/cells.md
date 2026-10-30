@@ -229,6 +229,16 @@ It has a slightly different structure than the [](#cells-subgroups) and so has b
 Since the length of the tree data depends on the number of particles in cell, vertically concatenating the trees into a $C$-row dataset would produce a ragged matrix, which does not support efficient, rapid access.
 Instead, each tree is stored as a separate dataset, with `tree_i` corresponding to `cell_i`, aka the $i$th row.
 
+:::{admonition} Important!
+:class: attention
+The tree index _needs_ to be padded with the appropriate amount of zeros such that the index portion of the name is the same length across all tree names.
+So if there are 10 cells, for example, they could be labeled `tree_0` through `tree_9`.
+But if there are 11-100 cells, it should be `tree_00` through `tree_99`, etc.
+
+The reason for this is to keep the trees stored in the same order as the cells (so `tree_1` next to `tree_2`).
+Without the padding, the trees would be stored as `tree_1`, `tree_10`, `tree_100`, `tree_1000`, `tree_11`, etc., which hurts data locality, especially when there are lots of trees.
+:::
+
 Just like the other subgroups, the trees are sorted by particle type, as particle type mixing is disallowed.
 
 So an example layout could look like
@@ -252,7 +262,7 @@ Since this can be difficult to easily parse when manually exploring, we are acti
 If you have a better idea, please contact us!
 :::
 
-:::{admonition} For simulation code developers
+:::{admonition} Tip for simulation code developers
 :class: tip
 :class: dropdown
 If your simulation already structures the data in an octree, you can output the trees directly, rather than relying on a post-processing `packingcubes` pass.
