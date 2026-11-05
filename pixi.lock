@@ -2,7 +2,7 @@ version: 7
 platforms:
 - name: linux-64
   virtual-packages:
-  - __unix=0=0
+  - __unix=0
   - __linux=4.18
   - __glibc=2.28
   - __archspec=0=x86_64
@@ -179,7 +179,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda
       - pypi: https://files.pythonhosted.org/packages/54/c8/12811c9b48fde162bb72b6f2e78fada9a247a09d7bb5be2050a5d099c77b/nodeenv-1.11.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/71/c9/8bce9c6a97c4968d0381d09ae8b8e5a9d8dea292896f37c898fe87da4a71/mdformat_toc-0.5.0-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/a2/5e/4566006965545a6461d4b250faafd57a3ff04a193ed664790fbbfe7ba91d/mystmd-1.11.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/a2/cc/777f77d4de0d3b2a4e52365ed9dc0700f3f1048f8c5c0bbe2282c9b8ead7/mystmd-1.12.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c1/61/ae77d87133bd32c86631dcfb595a24432cec45d868c99b7e9b6b50597bf0/mdformat_simple_breaks-0.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d0/89/446044f33aba0348d35e433f56d12206d010a5281a1df54054d4cfb82388/platformdirs-4.12.2-py3-none-any.whl
 packages:
@@ -2801,10 +2801,10 @@ packages:
   requires_dist:
   - mdformat>=0.7.5
   requires_python: '>=3.9'
-- pypi: https://files.pythonhosted.org/packages/a2/5e/4566006965545a6461d4b250faafd57a3ff04a193ed664790fbbfe7ba91d/mystmd-1.11.0-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/a2/cc/777f77d4de0d3b2a4e52365ed9dc0700f3f1048f8c5c0bbe2282c9b8ead7/mystmd-1.12.0-py3-none-any.whl
   name: mystmd
-  version: 1.11.0
-  sha256: 52ece5bff807e24e979ca86a806153a3c00247df32321547adc533b8720edab6
+  version: 1.12.0
+  sha256: 8a501a5e5b1304cb471f9e2b60dadcec6e08b697efc7e42adf47e6b7e5704fd3
   requires_dist:
   - platformdirs>=4.2.2
   - nodeenv>=1.9.1
