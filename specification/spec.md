@@ -35,7 +35,7 @@ Snapshots will be compressed using lossless compression unless otherwise specifi
 This compression is transparent to the user. 
 
 The files will be composed of a number of groups and datasets.
-Only 5 groups are required: **Header**, **Code**, **Cosmology**, **RunInfo** and **Units**.
+Only 6 groups are required: **Header**, **Cells**, **Code**, **Cosmology**, **RunInfo** and **Units**.
 They are described in the [Required Groups](#Required-Groups) subsection.
 
 The file may additionally contain groups about particles, initial conditions,  runtime parameters, and other relevant information.
