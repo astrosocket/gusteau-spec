@@ -24,11 +24,17 @@ The purposes are two-fold:
     :::
     The files are then split at cell boundaries, i.e. file 0 may contain cells 0-5, file 1 contains cells 6-11, etc.
 
-    - If `packingcubes` _is not_ being used, each file will map 1-1 to a cell.
+    - If `packingcubes` _is not_ being used, each file will map 1-1 to a cell[^alchemize].
         Note, however, that there is no implied particle ordering within the cell, so you may need to load all particles within the cell to find a particular subset.
         (This is usually how multipart snapshot files are implemented in e.g. Gizmo.)
     - If `packingcubes` is being used, the particles in $\text{cell}_i$ are additionally guaranteed to be spatially close and spatially ordered.
         Thus, particles in the beginning region of the cell are spatially closer together than to particles in later regions.
+
+[^alchemize]: In the alchemize tool, if you are not using `packingcubes` only one cell and thus only one file will be produced.
+
+    This is not required, however, so simulation codes and other tools that generate GUSTEAU snapshots can freely break up the cells among however many part-files are desired.
+    
+    Still can't split cells across files though.
 
   
 2. *Speed up spatial search.*
